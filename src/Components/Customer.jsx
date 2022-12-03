@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import { Container } from 'react-bootstrap'
 import Row from 'react-bootstrap/Row';
@@ -9,40 +9,46 @@ import Table from 'react-bootstrap/Table';
 import Footer from './Footer';
 import SideBar from './SideBar';
 import Navbar from './Navbar';
+import Modal from 'react-bootstrap/Modal';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
 
 export default function Customer() {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     <>
-      <Navbar/>
+      <Navbar />
       <div className="d-flex">
         <div>
-          <SideBar/>
+          <SideBar />
         </div>
         <Container className='ps-3' >
-        <Row >
-          <Col className='d-flex'>
-            <h3>Customer Management</h3>
-            <p className='ms-4 mt-2' >Customers |</p>
-            <p className='ms-4 mt-2'>Customer Management</p>
+          <Row >
+            <Col className='d-flex'>
+              <h3>Customer Management</h3>
+              <p className='ms-4 mt-2' >Customers |</p>
+              <p className='ms-4 mt-2'>Customer Management</p>
 
-          </Col>
-          <hr />
-        </Row>
-        <Row className=' d-flex mt-2'>
-          <Col className='d-flex' lg={3}>
-            <Form className='d-flex'>
-              <BsSearch className='mt-2' />
-              <Form.Control type="text" placeholder="Search this table" className='ms-2' />
-            </Form>
-          </Col>
-          <Col lg={9} style={{textAlign:'end'}}>
-            <Button variant="outline-info" className='me-4' >Filter</Button>
-            <Button variant="info">Create</Button>
+            </Col>
+            <hr />
+          </Row>
+          <Row className=' d-flex mt-2'>
+            <Col className='d-flex' lg={3}>
+              <Form className='d-flex'>
+                <BsSearch className='mt-2' />
+                <Form.Control type="text" placeholder="Search this table" className='ms-2' />
+              </Form>
+            </Col>
+            <Col lg={9} style={{ textAlign: 'end' }}>
+              <Button variant="outline-info" className='me-4' >Filter</Button>
+              <Button variant="info" onClick={handleShow}>Create</Button>
 
-          </Col>
-        </Row>
-        <Row>
-          
+            </Col>
+          </Row>
+          <Row>
+
             <Table className='mt-5'>
               <thead>
                 <tr>
@@ -80,12 +86,78 @@ export default function Customer() {
               </tbody>
 
 
-          </Table>
-        </Row>
-      </Container>
+            </Table>
+          </Row>
+        </Container>
       </div>
-      <Footer/>
-
+      <Footer />
+      <Modal show={show} onHide={handleClose} dialogClassName="modal-90w">
+        <Container fluid>
+          <Modal.Header closeButton>
+            <Row>
+              <h3>Create</h3> 
+            </Row>
+            <hr />
+          </Modal.Header>
+          <Row className="d-flex">
+            <Col >
+              <Form>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                  <Form.Label>Customer Name</Form.Label>
+                  <Form.Control type="text" placeholder="Customer Name" />
+                </Form.Group>
+              </Form>
+            </Col>
+            <Col>
+              <Form>
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                  <Form.Label>Email</Form.Label>
+                  <Form.Control type="email" placeholder="email" />
+                </Form.Group>
+              </Form>
+            </Col>
+          </Row>
+          <Row className="d-flex">
+            <Col>
+              <Form>
+                <Form.Group className="mb-3">
+                  <Form.Label>Phone</Form.Label>
+                  <Form.Control type="text" placeholder="Phone Number"></Form.Control>
+                </Form.Group>
+              </Form>
+            </Col>
+            <Col>
+              <Form.Group className="mb-3">
+                <Form.Label>Country</Form.Label>
+                <Form.Control type="text" placeholder="Country Name"></Form.Control>
+              </Form.Group>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <Form.Group className="mb-3">
+                <Form.Label>City</Form.Label>
+                <Form.Control type="text" placeholder="City Name"></Form.Control>
+              </Form.Group>
+            </Col>
+          </Row>
+          <Row>
+            <Form.Label>Address</Form.Label>
+            <Col>
+              <FloatingLabel controlId="floatingTextarea2" label="Address">
+                <Form.Control
+                  as="textarea"
+                  placeholder="Enter Address"
+                  style={{ height: '100px' }}
+                />
+              </FloatingLabel>
+            </Col>
+          </Row>
+          <Button variant="primary" type="submit" className="mt-4 mb-4">
+            Submit
+          </Button>
+        </Container>
+      </Modal>
 
     </>
   )
