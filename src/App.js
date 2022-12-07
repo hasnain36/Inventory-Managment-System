@@ -12,6 +12,10 @@ import AllProduct from './Components/Allproduct'
 import Suppliers from './Components/Suppliers';
 import User from './Components/User';
 import Login from './Components/Login';
+import Purchesesreturn from './Components/Purchesesreturn'
+import Salesreturn from './Components/Salesreturn'
+// import Navbar from './Components/Navbar'
+// import Footer from './Components/Footer'
 import {Route , Routes} from 'react-router-dom';
 function App() {
   return (
@@ -19,6 +23,19 @@ function App() {
       <Routes>
           <Route path='/' element={<Login/>}/>
           <Route path='/dashboard' element={<Dashboard/>}/>
+          <Route path='/allproduct' element={<AllProduct/>}/>
+          <Route path='/allpurchase' element={<AllPurchases/>}/>
+          <Route path='/brand' element={<Brand/>}/>
+          <Route path='/category' element={<Category/>}/>
+          <Route path='/createproduct' element={<CreateProduct/>}/>
+          <Route path='/createpurchase' element={<CreatePurchase/>}/>
+          <Route path='/createsale' element={<CreateSale/>}/>
+          <Route path='/customer' element={<Customer/>}/>
+          <Route path='/purchasereturn' element={<Purchesesreturn/>}/>
+          <Route path='/salesreturn' element={<Salesreturn/>}/>
+          <Route path='/suppliers' element={<Suppliers/>}/>
+          <Route path='/user' element={<User/>}/>
+         
       </Routes>
       
    {/* <Dashboard/> */}
