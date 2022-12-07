@@ -2,11 +2,16 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Asad from '../images/asad.png';
+import {Link} from 'react-router-dom';
+// import { Col, Row } from 'react-bootstrap';
 
 function Header() {
   return (
-    <Container fluid>
+    <Container>
         <Navbar bg="blue" expand="lg" style={{ height:'5rem' }}>
+       
+        
+      <Link to='/dashboard'>
       <img
               src={Asad}
               width="40"
@@ -14,13 +19,18 @@ function Header() {
               className="d-inline-block align-top"
               alt="React Bootstrap logo"
             />
+      </Link>
         <Navbar.Brand href="#" >Inventory Management System</Navbar.Brand>
+         
        
-          
-            <Button variant="outline-info" className='ms-auto'>sign in</Button>
-            <Button variant="outline-info" className='ms-2'>sign out</Button>
+        
+         <Link to='/'>
+            <Button variant="outline-info" className=''>sign out</Button>
+         </Link> 
+            
           
     
+        
     </Navbar>
       </Container>
   );

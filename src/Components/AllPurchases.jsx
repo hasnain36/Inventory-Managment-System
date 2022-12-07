@@ -9,6 +9,7 @@ import { Table } from 'react-bootstrap';
 import Navbar from './Navbar';
 import SideBar from './SideBar';
 import Footer from './Footer';
+import {Link} from 'react-router-dom';
 
  function AllPurchases() {
   return (
@@ -34,7 +35,9 @@ import Footer from './Footer';
             </Col>
             <Col lg={9} style={{textAlign:'end'}}>
             <Button variant="outline-info" className='me-4'>Filter</Button>
+            <Link to='/createpurchase'style={{textDecoration:"none"}} >
             <Button variant="info">Create</Button>
+            </Link>
             </Col>
         </Row>
         <Row className='mt-5'>
@@ -106,3 +109,6 @@ import Footer from './Footer';
   )
 }
 export default AllPurchases
+
+
+

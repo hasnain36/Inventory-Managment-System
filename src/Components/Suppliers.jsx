@@ -46,13 +46,20 @@ export default function Suppliers() {
             <Table className='mt-5'>
               <thead>
                 <tr>
-                  <th>#</th>
+                  <th>
+                    <Form.Check
+                                        inline
+                                        label=""
+                                        name="group1"
+                                        type='checkbox'
+                                    />
+                  </th>
                   <th>Code</th>
                   <th>Name</th>
                   <th>Phone</th>
                   <th>Email</th>
                   <th>City</th>
-                  <th>Tax numbar</th>
+                  <th>Tax number</th>
                   <th>Total Sale Due</th>
                   <th>Total Sale Return Due</th>
                   <th>Action</th>
@@ -61,27 +68,27 @@ export default function Suppliers() {
               <tbody>
                 <tr>
                   <td>1</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td>2</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                 </tr>
              
               </tbody>

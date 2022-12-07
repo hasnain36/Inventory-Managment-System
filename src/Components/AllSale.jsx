@@ -10,7 +10,7 @@ import SideBar from './SideBar';
 import Footer from './Footer';
 import {Link} from 'react-router-dom';
 
-function Allproduct() {
+function AllSale() {
     return (
         <>
             <Navbar />
@@ -22,8 +22,8 @@ function Allproduct() {
                     <Row  >
                         <Form>
                             <Col className='d-flex mt-4'>
-                                <h4>All Product</h4>
-                                <p className='mt-1 ms-3'>Product | All Product</p>
+                                <h4>All Sale</h4>
+                                <p className='mt-1 ms-3'>Sale | All Sale</p>
                             </Col>
                         </Form>
                     </Row>
@@ -35,7 +35,7 @@ function Allproduct() {
                         </Col>
                         <Col lg={9} style={{textAlign:'end'}}>
                             <Button variant="outline-info" className='me-4' >Filter</Button>
-                            <Link to='/createproduct' style={{textDecoration:"none"}}>
+                            <Link to='/createsale' style={{textDecoration:"none"}}>
                             <Button variant="info">Create</Button>
                             </Link>
                         </Col>
@@ -52,13 +52,17 @@ function Allproduct() {
                                             type='checkbox'
                                         />
                                     </th>
-                                    <th>Name</th>
-                                    <th>Code</th>
-                                    <th>Category</th>
-                                    <th>Brand</th>
-                                    <th>Price</th>
-                                    <th>Unit</th>
-                                    <th>Quantity</th>
+                                    <th>Date</th>
+                                    <th>Reference</th>
+                                    <th>Added by</th>
+                                    <th>Customer</th>
+                                    <th>Warehouse</th>
+                                    <th>Status</th>
+                                    <th>Grand Total</th>
+                                    <th>Paid</th>
+                                    <th>Due</th>
+                                    <th>Payment status</th>
+                                    <th>Shipping status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -73,19 +77,31 @@ function Allproduct() {
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
                                 <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
@@ -107,4 +123,4 @@ function Allproduct() {
         </>
     );
 }
-export default Allproduct;
+export default AllSale;
