@@ -17,6 +17,10 @@ import Salesreturn from './Components/Salesreturn'
 // import Navbar from './Components/Navbar'
 // import Footer from './Components/Footer'
 import {Route , Routes} from 'react-router-dom';
+import Purchasesreturn from './Components/Purchesesreturn';
+import Salesreturn from './Components/Salesreturn';
+import AllSale from './Components/AllSale';
+import Signup from './Components/Signup'
 function App() {
   return (
     <div className="App">
@@ -36,6 +40,13 @@ function App() {
           <Route path='/suppliers' element={<Suppliers/>}/>
           <Route path='/user' element={<User/>}/>
          
+          <Route path='/purchasereturn' element={<Purchasesreturn/>}/>
+          <Route path='/salereturn' element={<Salesreturn/>}/>
+          <Route path='/allsale' element={<AllSale/>}/>
+          <Route path='/signup' element={<Signup/>}/>
+          <Route path='/suppliers' element={<Suppliers/>}/>
+          <Route path='/user' element={<User/>}/>
+
       </Routes>
       
    {/* <Dashboard/> */}

@@ -9,6 +9,7 @@ import Table from 'react-bootstrap/Table';
 import Navbar from './Navbar'
 import Footer from './Footer';
 import SideBar from './SideBar';
+import {Link} from 'react-router-dom';
 
 
 function Dashboard() {
@@ -20,9 +21,10 @@ function Dashboard() {
         <SideBar/>
       </div>
     <div>
-    <Container>
+    <Container className='ps-5'>
     <Row xs={1} md={2} lg={4}>
     <Col >
+    <Link to='/allsale' style={{textDecoration:"none"}}>
     <Card style={{ width: '15.5rem' }} className="mt-4">
       <div className='d-flex' >
       <div className='text-primary '>
@@ -38,9 +40,11 @@ function Dashboard() {
         </div>
       </div>
     </Card>
+    </Link>
     </Col> 
     <Col>
-    <Card style={{ width: '16rem' }} className="mt-4">
+   <Link to='/allpurchase' style={{textDecoration:"none"}}>
+   <Card style={{ width: '16rem' }} className="mt-4">
     <div className='d-flex '>
       <div className='text-primary '>
         <Card.Body >
@@ -55,8 +59,10 @@ function Dashboard() {
         </div>
       </div>
     </Card>
+   </Link>
     </Col>
     <Col>
+    <Link to='/salereturn' style={{textDecoration:"none"}}>
     <Card style={{ width: '15rem' }} className="mt-4">
     <div className='d-flex '>
       <div className='text-primary '>
@@ -72,10 +78,12 @@ function Dashboard() {
         </div>
       </div>
     </Card>
+    </Link>
     
     </Col>
     <Col>
-    <Card style={{ width: '15rem' }} className="mt-4">
+   <Link to='/purchasereturn' style={{textDecoration:"none"}}>
+   <Card style={{ width: '15rem' }} className="mt-4">
     <div className='d-flex '>
       <div className='text-primary '>
         <Card.Body >
@@ -90,10 +98,11 @@ function Dashboard() {
         </div>
       </div>
     </Card>
+   </Link>
     </Col>
     </Row>
     </Container>
-    <Container>
+    <Container className='ps-5'>
         <Row className='mt-4'sm={1} md={1} lg={4} >
             <Col className='mt-4' lg={8}>
             <Card  >
@@ -170,8 +179,7 @@ function Dashboard() {
             </Col>
         </Row>
     </Container>
-
-    <Container>
+    <Container className='ps-5'>
         <Row className='mt-4'>
             <Col>
                 <Card>

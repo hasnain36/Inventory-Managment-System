@@ -9,6 +9,7 @@ import {
   MDBInput,
 }
 from 'mdb-react-ui-kit';
+import {Link} from 'react-router-dom';
 
 function Login() {
   // method navigate
@@ -27,13 +28,15 @@ function Login() {
               <MDBInput wrapperClass='mb-4 mx-5 w-100' labelClass='text-white' placeholder='Enter password' id='formControlLg' type='password' size="lg"/>
 
               <p className="small mb-3 pb-lg-2"><a class="text-white-75" href="#!">Forgot password?</a></p>
+              <Link to='/dashboard'>
               <MDBBtn outline className='mx-2 px-5' color='white' size='lg' >
                 Login
               </MDBBtn>
+              </Link>
               
 
               <div>
-                <p className="mb-0">Don't have an account? <a href="#!" class="text-white-75 fw-bold">Sign Up</a></p>
+                <p className="mb-0">Don't have an account? <a href="#!" class="text-white-75 fw-bold"><Link to='/signup'>Sign Up</Link></a></p>
 
               </div>
             </MDBCardBody>

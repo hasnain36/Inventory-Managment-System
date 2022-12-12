@@ -6,8 +6,6 @@ import { BsSearch } from "react-icons/bs";
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
 import SideBar from './SideBar';
-import Navbar from './Navbar'
-import Footer from './Footer'
 
 function Purchasesreturn() {
     return (

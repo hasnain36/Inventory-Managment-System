@@ -8,6 +8,7 @@ import Table from 'react-bootstrap/Table';
 import Navbar from './Navbar';
 import SideBar from './SideBar';
 import Footer from "./Footer";
+import {Link} from 'react-router-dom';
 
 function Category() {
     return (
@@ -31,7 +32,9 @@ function Category() {
                         <Form.Control type="Text" placeholder='Search this table'></Form.Control>
                     </Col>
                     <Col lg={9} style={{textAlign:'end'}}>
+                        <Link to='/createproduct' style={{textDecoration:"none"}}>
                         <Button variant="info" className="mt-4">Create</Button>
+                        </Link>
                     </Col>
                 </Row>
                 <Row>

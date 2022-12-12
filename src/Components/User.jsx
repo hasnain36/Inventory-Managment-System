@@ -46,38 +46,37 @@ export default function User() {
             <Table className='mt-5'>
               <thead>
                 <tr>
-                  <th>#</th>
+                  
                   <th>First Name</th>
                   <th> Last Name</th>
                   <th>User Name</th>
                   <th>Email</th>
                   <th>Phone</th>
                   <th>Status</th>
-                
                   <th>Action</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>1</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
+                  
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                   
                 </tr>
                 <tr>
-                  <td>2</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
+                  
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                 </tr>
               </tbody>
           </Table>
