@@ -11,12 +11,21 @@ import SideBar from './SideBar';
 import Navbar from './Navbar';
 import Modal from 'react-bootstrap/Modal';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
+import Offcanvas from 'react-bootstrap/Offcanvas';
+import { AiOutlineFilter } from 'react-icons/ai';
+import { BsPower } from 'react-icons/bs';
+import { AiOutlinePlusCircle } from 'react-icons/ai';
 
 export default function Customer() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const [pshow, setPshow] = useState(false);
+
+  const handlePclose = () => setPshow(false);
+  const handlePshow = () => setPshow(true);
   return (
     <>
       <Navbar />
@@ -42,8 +51,8 @@ export default function Customer() {
               </Form>
             </Col>
             <Col lg={9} style={{ textAlign: 'end' }}>
-              <Button variant="outline-info" className='me-4' >Filter</Button>
-              <Button variant="info" onClick={handleShow}>Create</Button>
+              <Button variant="outline-info" onClick={handlePshow} className='me-4' ><AiOutlineFilter />Filter</Button>
+              <Button variant="info" onClick={handleShow}><AiOutlinePlusCircle />Create</Button>
 
             </Col>
           </Row>
@@ -158,6 +167,29 @@ export default function Customer() {
           </Button>
         </Container>
       </Modal>
+
+      <Offcanvas show={pshow} onHide={handlePclose} placement='end'>
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>Filter</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+          <Form>
+          <Form.Label>Customer Code</Form.Label>
+        <Form.Control type="text" placeholder="Enter code" />
+          <Form.Label>Customer Name</Form.Label>
+        <Form.Control type="text" placeholder="Enter name" />
+          <Form.Label>Phone</Form.Label>
+        <Form.Control type="email" placeholder="Enter phone" />
+          <Form.Label>Email</Form.Label>
+        <Form.Control type="email" placeholder="Enter email" />
+        <Container className='d-flex'>
+              <Button variant="info" className='mt-3 w-50'  ><AiOutlineFilter /> Filter</Button>
+              <Button variant="danger" className='ms-3 mt-3 w-50' ><BsPower/>Reset</Button>
+              </Container>
+          </Form>
+        </Offcanvas.Body>
+
+      </Offcanvas>
 
     </>
   )

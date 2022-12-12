@@ -18,7 +18,7 @@ import Salesreturn from './Components/Salesreturn'
 // import Footer from './Components/Footer'
 import {Route , Routes} from 'react-router-dom';
 import Purchasesreturn from './Components/Purchesesreturn';
-import Salesreturn from './Components/Salesreturn';
+
 import AllSale from './Components/AllSale';
 import Signup from './Components/Signup'
 function App() {

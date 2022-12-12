@@ -11,12 +11,21 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import Modal from 'react-bootstrap/Modal';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
+import Offcanvas from 'react-bootstrap/Offcanvas';
+import { AiOutlineFilter } from 'react-icons/ai';
+import { BsPower } from 'react-icons/bs';
+import { AiOutlinePlusCircle } from 'react-icons/ai';
 
 export default function Suppliers() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const [prshow, setPrShow] = useState(false);
+
+  const handlePrClose = () => setPrShow(false);
+  const handlePrShow = () => setPrShow(true);
   return (
     <>
      <Navbar/>
@@ -42,8 +51,8 @@ export default function Suppliers() {
             </Form>
           </Col>
           <Col lg={9} style={{textAlign:'end'}}>
-            <Button variant="outline-info" className='me-4' >Filter</Button>
-            <Button variant="info" onClick={handleShow}>Create</Button>
+            <Button variant="outline-info" className='me-4' onClick={handlePrShow} ><AiOutlineFilter />Filter</Button>
+            <Button variant="info" onClick={handleShow}><AiOutlinePlusCircle />Create</Button>
 
           </Col>
         </Row>
@@ -174,6 +183,30 @@ export default function Suppliers() {
           </Button>
         </Container>
       </Modal>
+
+      <Offcanvas show={prshow} onHide={handlePrClose} placement='end'>
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>Filter</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+          <Form>
+          <Form.Label>Suppliers Code</Form.Label>
+        <Form.Control type="text" placeholder="Enter code" />
+          <Form.Label>Suppliers Name</Form.Label>
+        <Form.Control type="text" placeholder="Enter name" />
+          <Form.Label>Phone</Form.Label>
+        <Form.Control type="email" placeholder="Enter phone" />
+          <Form.Label>Email</Form.Label>
+        <Form.Control type="email" placeholder="Enter email" />
+        <Container className='d-flex'>
+              <Button variant="info" className='mt-3 w-50'><AiOutlineFilter/>Filter</Button>
+              <Button variant="danger" className='ms-3 mt-3 w-50' ><BsPower/>Reset</Button>
+              </Container>
+          </Form>
+        </Offcanvas.Body>
+
+      </Offcanvas>
+
 
     </>
   )
