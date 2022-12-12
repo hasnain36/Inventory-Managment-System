@@ -48,18 +48,6 @@ function App() {
           <Route path='/user' element={<User/>}/>
 
       </Routes>
-      
-   {/* <Dashboard/> */}
-   {/* <AllPurchases/> */}
-    {/* <Brand/> */}
-    {/* <Category/> */}
-    {/* <CreateProduct/> */}
-    {/* <CreatePurchase/> */}
-    {/* <CreateSale/> */}
-    {/* <Customer/> */}
-    {/* <AllProduct/> */}
-    {/* <Suppliers/> */}
-    {/* <User/> */}
     </div>
   );
 }
