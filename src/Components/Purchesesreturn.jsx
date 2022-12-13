@@ -7,12 +7,11 @@ import { BsSearch } from "react-icons/bs";
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
 import SideBar from './SideBar';
-import Navbar from './Navbar';
-import Footer from './Footer';
 import { BsPower } from "react-icons/bs";
 import { BiFilterAlt } from "react-icons/bi";
 import Offcanvas from 'react-bootstrap/Offcanvas';
-
+import Navbar from './Navbar';
+import Footer from './Footer';
 function Purchasesreturn() {
     const [show, setShow] = useState(false);
 
