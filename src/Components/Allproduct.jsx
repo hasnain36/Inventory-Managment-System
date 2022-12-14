@@ -17,20 +17,19 @@ import { TiDeleteOutline } from "react-icons/ti";
 function Allproduct() {
     const data = (val) => {
         return (
-            <tr>
+            <tr style={{textAlign:"start"}}>
                 <td><Form.Check
                     inline
                     label=""
                     name="group1"
                     type='checkbox'
                 /></td>
-                <td style={{textAlign:"start"}}>{val.Name}</td>
-                <td style={{textAlign:"start"}}>{val.code}</td>
-                <td style={{textAlign:"start"}}>{val.Category}</td>
-                <td style={{textAlign:"start"}}>{val.brand}</td>
-                <td style={{textAlign:"start"}}>{val.price}</td>
-                <td style={{textAlign:"start"}}>{val.unit}</td>
-                <td style={{textAlign:"start"}}>{val.quantity}</td>
+                <td>{val.Name}</td>
+                <td>{val.code}</td>
+                <td>{val.Category}</td>
+                <td>{val.brand}</td>
+                <td>{val.price}</td>
+                <td>{val.quantity}</td>
                 <td style={{textAlign:"start"}}><BsEyeFill/> <FiEdit/><TiDeleteOutline/></td>
             </tr>
         )

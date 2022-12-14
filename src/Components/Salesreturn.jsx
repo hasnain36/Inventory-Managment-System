@@ -12,12 +12,40 @@ import Navbar from './Navbar';
 import { BsPower } from "react-icons/bs";
 import { BiFilterAlt } from "react-icons/bi";
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import { BsEyeFill } from "react-icons/bs";
+import { FiEdit } from "react-icons/fi";
+import { TiDeleteOutline } from "react-icons/ti";
+import SaleReturnStock from './SaleReturnStock';
 
 function Salesreturn() {
+    const data = (val) => {
+        return (
+            <tr style={{textAlign:"start"}}>
+                <td><Form.Check
+                    inline
+                    label=""
+                    name="group1"
+                    type='checkbox'
+                /></td>
+                <td>{val.date}</td>
+                <td>{val.reference}</td>
+                <td>{val.customer}</td>
+                <td>{val.warehouse}</td>
+                <td>{val.saleref}</td>
+                <td>{val.status}</td>
+                <td>{val.grandtotal}</td>
+                <td>{val.paid}</td>
+                <td>{val.due}</td>
+                <td>{val.paymentstatus}</td>
+                <td style={{textAlign:"start"}}><BsEyeFill/> <FiEdit/><TiDeleteOutline/></td>
+            </tr>
+        )
+    }
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    
     return (
         <>
        <Navbar/>
@@ -68,48 +96,7 @@ function Salesreturn() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                       {SaleReturnStock.map(data)}
                     </tbody>
                 </Table>
             </Row>
