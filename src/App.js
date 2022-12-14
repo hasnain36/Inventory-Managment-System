@@ -16,7 +16,7 @@ import {Route , Routes} from 'react-router-dom';
 import Purchasesreturn from './Components/Purchesesreturn';
 import Salesreturn from './Components/Salesreturn';
 import AllSale from './Components/AllSale';
-import Signup from './Components/Signup'
+import Signup from './Components/Signup';
 function App() {
   return (
     <div className="App">
