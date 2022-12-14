@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -12,8 +13,13 @@ import { Link } from 'react-router-dom';
 import CategoryStock from './CategoryStock';
 import { FiEdit } from "react-icons/fi";
 import { TiDeleteOutline } from "react-icons/ti";
+import Modal from 'react-bootstrap/Modal';
 
 function Category() {
+    const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
     const data = (val) => {
         return (
             <tr>
@@ -23,9 +29,9 @@ function Category() {
                     name="group1"
                     type='checkbox'
                 /></td>
-                <td style={{textAlign:"start"}}>{val.categoryname}</td>
-                <td style={{textAlign:'start'}}>{val.categorycode}</td>
-                <td style={{textAlign:"start"}}><FiEdit/><TiDeleteOutline/></td>
+                <td >{val.categoryname}</td>
+                <td>{val.categorycode}</td>
+                <td><FiEdit onClick={handleShow}/><TiDeleteOutline/></td>
             </tr>
         )
     }
@@ -67,9 +73,9 @@ function Category() {
                                             type='checkbox'
                                         />
                                     </th>
-                                    <th style={{textAlign:'start'}}>Category Name</th>
-                                    <th style={{textAlign:'start'}}>Category Code</th>
-                                    <th style={{textAlign:'start'}}>Action</th>
+                                    <th >Category Name</th>
+                                    <th>Category Code</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -80,6 +86,33 @@ function Category() {
                 </Container>
             </div>
             <Footer />
+            <Modal show={show} onHide={handleClose} dialogClassName="modal-90w">
+        <Container fluid>
+          <Modal.Header closeButton>
+              <h5>Edit</h5>
+            <hr />
+          </Modal.Header>
+          <Row className='mt-2 ps-2' >
+              <Form>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                  <Form.Label>Category Code</Form.Label>
+                  <Form.Control type="text" placeholder="Category code" />
+                </Form.Group>
+              </Form>
+            </Row>
+            <Row className='ps-2'>
+              <Form>
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                  <Form.Label>Category Name</Form.Label>
+                  <Form.Control type="email" placeholder="Category Name" />
+                </Form.Group>
+              </Form>
+          </Row>
+          <Button variant="primary" type="submit" className="mt-2 mb-4 ms-2">
+            Submit
+          </Button>
+        </Container>
+      </Modal>
         </>
     );
 }

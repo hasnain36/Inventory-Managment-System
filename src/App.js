@@ -17,6 +17,7 @@ import Purchasesreturn from './Components/Purchesesreturn';
 import Salesreturn from './Components/Salesreturn';
 import AllSale from './Components/AllSale';
 import Signup from './Components/Signup';
+import UpdateProduct from './Components/UpdateProduct';
 function App() {
   return (
     <div className="App">
@@ -37,6 +38,7 @@ function App() {
           <Route path='/signup' element={<Signup/>}/>
           <Route path='/suppliers' element={<Suppliers/>}/>
           <Route path='/user' element={<User/>}/>
+          <Route path='/updateproduct' element={<UpdateProduct/>}/>
       </Routes>
       
    {/* <Dashboard/> */}

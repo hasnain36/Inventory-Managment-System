@@ -29,8 +29,13 @@ function Allproduct() {
                 <td>{val.Category}</td>
                 <td>{val.brand}</td>
                 <td>{val.price}</td>
+                <td>{val.unit}</td>
                 <td>{val.quantity}</td>
-                <td style={{textAlign:"start"}}><BsEyeFill/> <FiEdit/><TiDeleteOutline/></td>
+                <td><BsEyeFill/>
+                <Link to='/updateproduct' style={{color:"black"}}>
+                    <FiEdit/>
+                    </Link>
+                    <TiDeleteOutline/></td>
             </tr>
         )
     }
