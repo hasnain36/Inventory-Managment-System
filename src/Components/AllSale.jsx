@@ -1,17 +1,27 @@
+import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
-import { BsSearch } from "react-icons/bs";
+import { BsSearch} from "react-icons/bs";
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
 import Navbar from './Navbar';
 import SideBar from './SideBar';
 import Footer from './Footer';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Offcanvas from 'react-bootstrap/Offcanvas';
+import { BiFilterAlt } from "react-icons/bi";
+import { BsPower } from "react-icons/bs";
+import { AiOutlinePlusCircle } from "react-icons/ai";
 
 function AllSale() {
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     return (
+
         <>
             <Navbar />
             <div className="d-flex">
@@ -33,10 +43,10 @@ function AllSale() {
                             <BsSearch className='m-2' />
                             <Form.Control type="Text" placeholder='Search this table'></Form.Control>
                         </Col>
-                        <Col lg={9} style={{textAlign:'end'}}>
-                            <Button variant="outline-info" className='me-4' >Filter</Button>
-                            <Link to='/createsale' style={{textDecoration:"none"}}>
-                            <Button variant="info">Create</Button>
+                        <Col lg={9} style={{ textAlign: 'end' }}>
+                            <Button variant="outline-info" className='me-4' onClick={handleShow}><BiFilterAlt className='pe-1'/>Filter</Button>
+                            <Link to='/createsale' style={{ textDecoration: "none" }}>
+                                <Button variant="info"><AiOutlinePlusCircle className='pe-1'/>Create</Button>
                             </Link>
                         </Col>
                     </Row>
@@ -115,11 +125,96 @@ function AllSale() {
                             </tbody>
                         </Table>
                     </Row>
-
-
                 </Container>
             </div>
             <Footer />
+            <Offcanvas show={show} onHide={handleClose} placement='end'>
+                <Offcanvas.Header closeButton>
+                    <Offcanvas.Title>Filter</Offcanvas.Title>
+                </Offcanvas.Header>
+                <Offcanvas.Body>
+                    <Row>
+                        <Form>
+                            <Form.Label>Date</Form.Label>
+                            <Form.Control type="date" placeholder=""/>
+                        </Form>
+                    </Row>
+                    <Row>
+                        <Form>
+                            <Form.Label>Reference</Form.Label>
+                            <Form.Control type="text" placeholder="Reference" />
+                        </Form>
+                    </Row>
+                    <Row>
+                        <Form>
+                            <Form.Label>Customer</Form.Label>
+                            <Form.Select id="status">
+                                <option selected>Choose Customer</option>
+                                <option>Mehr Ali</option>
+                                <option>Asad Abbas</option>
+                                <option>Hasnain Asif</option>
+                            </Form.Select>
+                        </Form>
+                    </Row>
+                    <Row>
+                        <Form>
+                            <Form.Label>Warehouse</Form.Label>
+                            <Form.Select id="Warehouse">
+                                <option selected>Choose Warehouse</option>
+                                <option>Warehouse 1</option>
+                                <option>Warehouse 2</option>
+                            </Form.Select>
+                        </Form>
+                    </Row>
+                    <Row>
+                        <Form>
+                            <Form.Label>Status</Form.Label>
+                            <Form.Select id="status">
+                                <option selected>Please Select</option>
+                                <option>Completed</option>
+                                <option>Pending</option>
+                                <option>Orderd</option>
+                            </Form.Select>
+                        </Form>
+                    </Row>
+                    <Row>
+                        <Form>
+                            <Form.Label>Payment Status</Form.Label>
+                            <Form.Select id="status">
+                                <option selected>Choose Status</option>
+                                <option>paid</option>
+                                <option>Partial</option>
+                                <option>Unpaid</option>
+                            </Form.Select>
+                        </Form>
+                    </Row>
+                    <Row>
+                        <Form>
+                            <Form.Label>Shopping Status</Form.Label>
+                            <Form.Select id="status">
+                                <option selected>Please Select</option>
+                                <option>Orderd</option>
+                                <option>Packed</option>
+                                <option>Shipped</option>
+                            </Form.Select>
+                        </Form>
+                    </Row>
+                    <Row>
+                        <Form>
+                            <Form.Label>Warehouse</Form.Label>
+                            <Form.Select id="status">
+                                <option selected>Please Warehouse</option>
+                                <option>Warehouse 1</option>
+                                <option>Warehouse 2</option>
+                            </Form.Select>
+                        </Form>
+                    </Row>
+                    <Container className='d-flex mt-2'>
+                    <Button variant="info" className='w-50 me-2'><BiFilterAlt/>Filter</Button>
+                    <Button variant="danger" className='w-50 me-2'><BsPower/> Reset</Button>
+                    </Container>
+                </Offcanvas.Body>
+            </Offcanvas>
         </>
     );
 }
