@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 function Header() {
   return (
     <>
-   <Navbar bg="light" expand="lg" className='mb-3'>
+   <Navbar bg="light" expand="lg" className='mb-3' sticky='top'>
       <Container fluid>    
        <Link to='/dashboard' style={{textDecoration: "none"}} className='ps-5'>
        <p className='d-flex align-items-center text-dark'>

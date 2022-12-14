@@ -15,8 +15,31 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import { AiOutlineFilter } from 'react-icons/ai';
 import { BsPower } from 'react-icons/bs';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
+import SuppliersStock from './SuppliersStock';
 
 export default function Suppliers() {
+  const data = (val) => {
+    return (
+      <tr>
+        <td><Form.Check
+          inline
+          label=""
+          name="group1"
+          type='checkbox'
+        />
+        </td>
+        <td>{val.code}</td>
+        <td>{val.name}</td>
+        <td>{val.phone}</td>
+        <td>{val.email}</td>
+        <td>{val.city}</td>
+        <td>{val.taxnumber}</td>
+        <td>{val.totalsaledue}</td>
+        <td>{val.totalsalereturndue}</td>
+        <td></td>
+      </tr>
+    )
+  }
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -28,46 +51,45 @@ export default function Suppliers() {
   const handlePrShow = () => setPrShow(true);
   return (
     <>
-     <Navbar/>
-     <div className="d-flex">
-      <div>
-        <SideBar/>
-      </div>
-      <Container >
-        <Row >
-          <Col className='d-flex'>
-            <h3>Suppliers Management</h3>
-            <p className='ms-4 mt-2' >Suppliers |</p>
-            <p className='ms-4 mt-2'>Supplierts management</p>
+      <Navbar />
+      <div className="d-flex">
+        <div>
+          <SideBar />
+        </div>
+        <Container >
+          <Row >
+            <Col className='d-flex'>
+              <h3>Suppliers Management</h3>
+              <p className='ms-4 mt-2' >Suppliers |</p>
+              <p className='ms-4 mt-2'>Supplierts management</p>
 
-          </Col>
-          <hr />
-        </Row>
-        <Row className=' d-flex mt-2'>
-          <Col className='d-flex' lg={3}>
-            <Form className='d-flex'>
-              <BsSearch className='mt-2' />
-              <Form.Control type="text" placeholder="Search this table" className='ms-2' />
-            </Form>
-          </Col>
-          <Col lg={9} style={{textAlign:'end'}}>
-            <Button variant="outline-info" className='me-4' onClick={handlePrShow} ><AiOutlineFilter />Filter</Button>
-            <Button variant="info" onClick={handleShow}><AiOutlinePlusCircle />Create</Button>
+            </Col>
+            <hr />
+          </Row>
+          <Row className=' d-flex mt-2'>
+            <Col className='d-flex' lg={3}>
+              <Form className='d-flex'>
+                <BsSearch className='mt-2' />
+                <Form.Control type="text" placeholder="Search this table" className='ms-2' />
+              </Form>
+            </Col>
+            <Col lg={9} style={{ textAlign: 'end' }}>
+              <Button variant="outline-info" className='me-4' onClick={handlePrShow} ><AiOutlineFilter />Filter</Button>
+              <Button variant="info" onClick={handleShow}><AiOutlinePlusCircle />Create</Button>
+            </Col>
+          </Row>
+          <Row>
 
-          </Col>
-        </Row>
-        <Row>
-          
             <Table className='mt-5'>
               <thead>
                 <tr>
                   <th>
                     <Form.Check
-                                        inline
-                                        label=""
-                                        name="group1"
-                                        type='checkbox'
-                                    />
+                      inline
+                      label=""
+                      name="group1"
+                      type='checkbox'
+                    />
                   </th>
                   <th>Code</th>
                   <th>Name</th>
@@ -81,46 +103,20 @@ export default function Suppliers() {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-             
+                {SuppliersStock.map(data)}
               </tbody>
+            </Table>
+          </Row>
 
 
-          </Table>
-        </Row>
-        
-
-      </Container>
-     </div>
-      <Footer/>
+        </Container>
+      </div>
+      <Footer />
       <Modal show={show} onHide={handleClose}>
-      <Container fluid>
+        <Container fluid>
           <Modal.Header closeButton>
             <Row>
-              <h3>Create</h3> 
+              <h3>Create</h3>
             </Row>
             <hr />
           </Modal.Header>
@@ -190,18 +186,18 @@ export default function Suppliers() {
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Form>
-          <Form.Label>Suppliers Code</Form.Label>
-        <Form.Control type="text" placeholder="Enter code" />
-          <Form.Label>Suppliers Name</Form.Label>
-        <Form.Control type="text" placeholder="Enter name" />
-          <Form.Label>Phone</Form.Label>
-        <Form.Control type="email" placeholder="Enter phone" />
-          <Form.Label>Email</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" />
-        <Container className='d-flex'>
-              <Button variant="info" className='mt-3 w-50'><AiOutlineFilter/>Filter</Button>
-              <Button variant="danger" className='ms-3 mt-3 w-50' ><BsPower/>Reset</Button>
-              </Container>
+            <Form.Label>Suppliers Code</Form.Label>
+            <Form.Control type="text" placeholder="Enter code" />
+            <Form.Label>Suppliers Name</Form.Label>
+            <Form.Control type="text" placeholder="Enter name" />
+            <Form.Label>Phone</Form.Label>
+            <Form.Control type="email" placeholder="Enter phone" />
+            <Form.Label>Email</Form.Label>
+            <Form.Control type="email" placeholder="Enter email" />
+            <Container className='d-flex'>
+              <Button variant="info" className='mt-3 w-50'><AiOutlineFilter />Filter</Button>
+              <Button variant="danger" className='ms-3 mt-3 w-50' ><BsPower />Reset</Button>
+            </Container>
           </Form>
         </Offcanvas.Body>
 

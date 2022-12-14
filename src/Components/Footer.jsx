@@ -7,7 +7,7 @@ import {
 
 export default function Footer() {
   return (
-    <MDBFooter className='text-white mt-4 bg-info' sm={1} md={2} lg={4}>
+    <MDBFooter className='text-white mt-4 bg-info' sm={2} md={2} lg={4}>
       <MDBContainer className='p-4 pb-0'>
           <p className='d-flex align-items-center'>
           <img

@@ -14,8 +14,23 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import { AiOutlineFilter } from 'react-icons/ai';
 import { BsPower } from 'react-icons/bs';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
+import UsersStock from './UserStock';
 
 export default function User() {
+  const data = (val) => {
+    return (
+      <tr>
+        
+        <td>{val.firstname}</td>
+        <td>{val.lastname}</td>
+        <td>{val.username}</td>
+        <td>{val.email}</td>
+        <td>{val.phone}</td>
+        <td>{val.status}</td>
+        <td></td>
+      </tr>
+    )
+  }
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -71,27 +86,7 @@ export default function User() {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-
-                </tr>
-                <tr>
-
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
+                {UsersStock.map(data)}
               </tbody>
             </Table>
           </Row>

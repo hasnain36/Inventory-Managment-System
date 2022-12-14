@@ -10,9 +10,44 @@ import Navbar from './Navbar'
 import Footer from './Footer';
 import SideBar from './SideBar';
 import {Link} from 'react-router-dom';
+import {Stock , Stock2 ,Stock3} from './Stock';
 
 
 function Dashboard() {
+  const data =(val) =>{
+    return(
+        <tr>
+          <td>{val.code}</td>
+          <td>{val.product}</td>
+          <td>{val.quantity}</td>
+          <td>{val.aquantity}</td>
+        </tr>
+    )
+  }
+  const data2 =(val2) =>{
+    return(
+        <tr>
+          
+          <td>{val2.product}</td>
+          <td>{val2.quantity}</td>
+          <td>{val2.grandtotal}</td>
+        </tr>
+    )
+  }
+  const data3 =(val3) =>{
+    return(
+        <tr>
+          
+          <td>{val3.reference}</td>
+          <td>{val3.customer}</td>
+          <td>{val3.status}</td>
+          <td>{val3.grandtotal}</td>
+          <td>{val3.paid}</td>
+          <td>{val3.due}</td>
+          <td>{val3.paymentstatus}</td>
+        </tr>
+    )
+  }
   return (
     <>
     <Navbar/>
@@ -118,24 +153,7 @@ function Dashboard() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
+          {Stock.map(data)}
         </tbody>
       </Table>
             </Card>
@@ -153,26 +171,7 @@ function Dashboard() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
-          <tr>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
-          <tr>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
-          <tr>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
+         {Stock2.map(data2)}
         </tbody>
       </Table>
             </Card>
@@ -198,33 +197,7 @@ function Dashboard() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
-          <tr>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
-          <tr>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
+         {Stock3.map(data3)}
         </tbody>
       </Table>
                 </Card>
