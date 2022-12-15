@@ -6,19 +6,46 @@ import Container from 'react-bootstrap/Container';
 import { BsSearch ,BsPower } from "react-icons/bs";
 import { BiFilterAlt } from "react-icons/bi";
 import { AiOutlinePlusCircle } from "react-icons/ai";
+import { BsJustifyLeft } from "react-icons/bs";
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Table from 'react-bootstrap/Table';
 import Navbar from './Navbar';
 import SideBar from './SideBar';
 import Footer from './Footer';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import AllProductStock from './AllProductStock';
+import { BsEyeFill } from "react-icons/bs";
+import { FiEdit } from "react-icons/fi";
+import { TiDeleteOutline } from "react-icons/ti";
 
 function Allproduct() {
+
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const data = (val) => {
+        return (
+            <tr>
+                <td><Form.Check
+                    inline
+                    label=""
+                    name="group1"
+                    type='checkbox'
+                /></td>
+                <td style={{textAlign:"start"}}>{val.Name}</td>
+                <td style={{textAlign:"start"}}>{val.code}</td>
+                <td style={{textAlign:"start"}}>{val.Category}</td>
+                <td style={{textAlign:"start"}}>{val.brand}</td>
+                <td style={{textAlign:"start"}}>{val.price}</td>
+                <td style={{textAlign:"start"}}>{val.unit}</td>
+                <td style={{textAlign:"start"}}>{val.quantity}</td>
+                <td style={{textAlign:"start"}}><BsEyeFill/> <FiEdit/><TiDeleteOutline/></td>
+            </tr>
+        )
+    }
+
     return (
         <>
             <Navbar />
@@ -60,50 +87,18 @@ function Allproduct() {
                                             type='checkbox'
                                         />
                                     </th>
-                                    <th>Name</th>
-                                    <th>Code</th>
-                                    <th>Category</th>
-                                    <th>Brand</th>
-                                    <th>Price</th>
-                                    <th>Unit</th>
-                                    <th>Quantity</th>
-                                    <th>Action</th>
+                                    <th style={{textAlign:"start"}}>Name</th>
+                                    <th style={{textAlign:"start"}}>Code</th>
+                                    <th style={{textAlign:"start"}}>Category</th>
+                                    <th style={{textAlign:"start"}}>Brand</th>
+                                    <th style={{textAlign:"start"}}>Price</th>
+                                    <th style={{textAlign:"start"}}>Unit</th>
+                                    <th style={{textAlign:"start"}}>Quantity</th>
+                                    <th style={{textAlign:"start"}}>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
+                                {AllProductStock.map(data)}
                             </tbody>
                         </Table>
                     </Row>

@@ -12,10 +12,40 @@ import Footer from './Footer';
 import { Link } from 'react-router-dom';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { BiFilterAlt } from "react-icons/bi";
-import { BsPower } from "react-icons/bs";
+import { BsPower,BsThreeDotsVertical } from "react-icons/bs";
 import { AiOutlinePlusCircle } from "react-icons/ai";
+import SaleStock from './AllsaleStock';
 
 function AllSale() {
+const data1=(value1)=>{
+    return(
+        <tr>
+             <td> <Form.Check
+            inline
+            name="group1"
+            type='checkbox'/>
+            </td>
+            <td>{value1.date}</td>
+            <td>{value1.reference}</td>
+            <td>{value1.addedby}</td>
+            <td>{value1.customer}</td>
+            <td>{value1.warehouse}</td>
+            <td>{value1.status}</td>
+            <td>{value1.grandtotal}</td>
+            <td>{value1.paid}</td>
+            <td>{value1.due}</td>
+            <td>{value1.paymentstatus}</td>
+            <td>{value1.due}</td>
+            <td><BsThreeDotsVertical/></td>
+        </tr>
+    )
+
+}
+
+
+
+
+
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -77,51 +107,7 @@ function AllSale() {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
+                               {SaleStock.map(data1)}
                             </tbody>
                         </Table>
                     </Row>

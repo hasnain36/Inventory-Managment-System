@@ -61,7 +61,7 @@ export default function SideBar() {
         </Offcanvas>
       </Card>
 
-      <Card style={{ width: '7rem', height: '7rem' }}>
+      <Card style={{ width: '5rem', height: '5rem' }}>
         <BsReceipt onClick={handlePrShow} size={'sm'} className="text-primary" />
         <p className="text-primary" onClick={handlePrShow} > Purchase</p>
         <Offcanvas show={prshow} onHide={handlePrClose}>

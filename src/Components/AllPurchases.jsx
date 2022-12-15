@@ -13,8 +13,30 @@ import Navbar from './Navbar';
 import SideBar from './SideBar';
 import Footer from './Footer';
 import {Link} from 'react-router-dom';
+import PurchaseStock from './Stock';
 
  function AllPurchases() {
+  const data =(value)=>{
+    return(
+      <tr>
+        <td> <Form.Check
+            inline
+            name="group1"
+            type='checkbox'/>
+            </td>
+      <td>{value.date}</td>
+      <td>{value.reference}</td>
+      <td>{value.supplier}</td>
+      <td>{value.warehouse}</td>
+      <td>{value.status}</td>
+      <td>{value.grandtotal}</td>
+      <td>{value.paid}</td>
+      <td>{value.due}</td>
+      <td>{value.paymentstatus}</td>
+      </tr>
+    )
+
+  }
   const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -70,42 +92,7 @@ import {Link} from 'react-router-dom';
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
+       {PurchaseStock.map(data)}
       </tbody>
     </Table>
         </Row>
