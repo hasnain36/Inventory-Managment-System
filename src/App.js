@@ -12,15 +12,12 @@ import AllProduct from './Components/Allproduct'
 import Suppliers from './Components/Suppliers';
 import User from './Components/User';
 import Login from './Components/Login';
-import Purchesesreturn from './Components/Purchesesreturn'
-import Salesreturn from './Components/Salesreturn'
-// import Navbar from './Components/Navbar'
-// import Footer from './Components/Footer'
+import Purchesesreturn from './Components/Purchesesreturn';
+import Salesreturn from './Components/Salesreturn';
 import {Route , Routes} from 'react-router-dom';
 import Purchasesreturn from './Components/Purchesesreturn';
-
 import AllSale from './Components/AllSale';
-import Signup from './Components/Signup'
+import Signup from './Components/Signup';
 function App() {
   return (
     <div className="App">
