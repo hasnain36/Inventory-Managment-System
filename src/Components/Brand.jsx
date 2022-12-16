@@ -14,22 +14,20 @@ import { FiEdit } from "react-icons/fi";
 import { TiDeleteOutline } from "react-icons/ti";
 
 function Brand() {
-    const data = (val) => {
+    const data =(val) =>{
         return (
-            <tr>
-                <td style={{textAliign:'start'}}><Form.Check
+            <tr style={{textAlign: "start"}}>
+                <td>
+                    <Form.Check 
                     inline
                     label=""
                     name="group1"
-                    type='checkbox'></Form.Check>
+                    type='checkbox'>
+                    </Form.Check>
                 </td>
-                <td style={{textAlign: 'start'}}>
-                    {val.brandname}
-                </td>
-                <td style={{textAlign: 'start'}}>
-                    {val.branddes}
-                </td>
-                <td style={{cursor: "pointer"}}><FiEdit title='edit'/><TiDeleteOutline title='delete'/></td>
+                <td>{val.brandname}</td>
+                <td>{val.branddes}</td>
+                <td><FiEdit/><TiDeleteOutline/></td>
             </tr>
         )
     }
@@ -62,7 +60,7 @@ function Brand() {
                     <Row>
                         <Table striped hover className='mt-4'>
                             <thead>
-                                <tr>
+                                <tr style={{textAlign: 'start'}}>
                                     <th>
                                         <Form.Check
                                             inline
@@ -71,9 +69,9 @@ function Brand() {
                                             type='checkbox'
                                         />
                                     </th>
-                                    <th style={{textAlign: 'start'}}>Brand Name</th>
-                                    <th style={{textAlign: 'start'}}>Brand Description</th>
-                                    <th style={{textAlign: 'start'}}>Action</th>
+                                    <th >Brand Name</th>
+                                    <th >Brand Description</th>
+                                    <th >Action</th>
                                 </tr>
                             </thead>
                             <tbody>

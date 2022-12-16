@@ -19,6 +19,7 @@ import { FiEdit } from "react-icons/fi";
 import { TiDeleteOutline } from "react-icons/ti";
 
 function Allproduct() {
+
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -40,7 +41,7 @@ function Allproduct() {
                 <td >{val.price}</td>
                 <td >{val.unit}</td>
                 <td >{val.quantity}</td>
-                <td style={{cursor: "pointer"}}><BsEyeFill title='view' /> <FiEdit title='edit'/><TiDeleteOutline title='delete'/></td>
+                <td style={{cursor: "pointer"}}><BsEyeFill title='view'/> <FiEdit title='edit'/><TiDeleteOutline title='delete'/></td>
             </tr>
         )
     }
