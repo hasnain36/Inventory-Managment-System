@@ -12,6 +12,10 @@ import { Link } from 'react-router-dom'
 import BrandStock from './BrandStock';
 import { FiEdit } from "react-icons/fi";
 import { TiDeleteOutline } from "react-icons/ti";
+import { Link } from 'react-router-dom'
+import BrandStock from './BrandStock';
+import { FiEdit } from "react-icons/fi";
+import { TiDeleteOutline } from "react-icons/ti";
 
 function Brand() {
     const data =(val) =>{
