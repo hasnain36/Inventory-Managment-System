@@ -185,7 +185,7 @@ export default function Customer() {
         <Form.Control type="email" placeholder="Enter phone" />
           <Form.Label>Email</Form.Label>
         <Form.Control type="email" placeholder="Enter email" />
-        <Container className='d-flex'>
+        <Container className='d-flex ps-1'>
               <Button variant="info" className='mt-3 w-50'  ><AiOutlineFilter /> Filter</Button>
               <Button variant="danger" className='ms-3 mt-3 w-50' ><BsPower/>Reset</Button>
               </Container>

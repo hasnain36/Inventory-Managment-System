@@ -1,8 +1,8 @@
 const AllSaleStock = [
     {
         date:"2022-12-15",
-        Reference : "sl-01",
-        Addedby : "Mehr Ali",
+        reference : "sl-01",
+        addedby : "Mehr Ali",
         customer : "Asad",
         warehouse : "Warehouse 1",
         status : "pendding",
@@ -14,8 +14,8 @@ const AllSaleStock = [
     },
     {
         date:"2022-12-15",
-        Reference : "sl-02",
-        Addedby : "Mehr Ali",
+        reference : "sl-02",
+        addedby : "Mehr Ali",
         customer : "Hasnain",
         warehouse : "Warehouse 1",
         status : "pendding",
@@ -27,8 +27,8 @@ const AllSaleStock = [
     },
     {
         date:"2022-12-15",
-        Reference : "sl-03",
-        Addedby : "Hasnain",
+        reference : "sl-03",
+        addedby : "Hasnain",
         customer : "Asad",
         warehouse : "Warehouse 1",
         status : "pendding",

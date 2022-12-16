@@ -14,7 +14,7 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import { BiFilterAlt } from "react-icons/bi";
 import { BsPower,BsThreeDotsVertical } from "react-icons/bs";
 import { AiOutlinePlusCircle } from "react-icons/ai";
-import SaleStock from './AllsaleStock';
+import AllSaleStock from './AllSaleStock';
 
 function AllSale() {
 const data1=(value1)=>{
@@ -102,7 +102,7 @@ const data1=(value1)=>{
                                 </tr>
                             </thead>
                             <tbody>
-                               {SaleStock.map(data1)}
+                               {AllSaleStock.map(data1)}
                             </tbody>
                         </Table>
                     </Row>
@@ -183,14 +183,14 @@ const data1=(value1)=>{
                     <Row>
                         <Form>
                             <Form.Label>Warehouse</Form.Label>
-                            <Form.Select id="status">
+                            <Form.Select>
                                 <option selected>Please Warehouse</option>
                                 <option>Warehouse 1</option>
                                 <option>Warehouse 2</option>
                             </Form.Select>
                         </Form>
                     </Row>
-                    <Container className='d-flex mt-2'>
+                    <Container className='d-flex mt-2 ps-1'>
                     <Button variant="info" className='w-50 me-2'><BiFilterAlt/>Filter</Button>
                     <Button variant="danger" className='w-50 me-2'><BsPower/> Reset</Button>
                     </Container>

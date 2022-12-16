@@ -186,7 +186,7 @@ function Purchasesreturn() {
                             </Form.Select>
                         </Form>
                     </Row>
-                    <Container className='d-flex mt-2'>
+                    <Container className='d-flex mt-2 ps-1'>
                     <Button variant="info" className='w-50 me-2'><BiFilterAlt/>Filter</Button>
                     <Button variant="danger" className='w-50 me-2'><BsPower/> Reset</Button>
                     </Container>

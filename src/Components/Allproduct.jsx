@@ -107,11 +107,11 @@ function Allproduct() {
             </div>
             <Footer />
 
-            <Offcanvas show={show} onHide={handleClose} placement='end' className='ps-3 pe-3'>
+            <Offcanvas show={show} onHide={handleClose} placement='end' className='  pe-3'>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Filter</Offcanvas.Title>
         </Offcanvas.Header>
-        <Form>
+        <Form className='ps-3'>
         <Form.Label>Code Product</Form.Label>
               <Form.Control type="text" placeholder="Name" />
         <Form.Label>Product</Form.Label>
@@ -129,7 +129,7 @@ function Allproduct() {
                 <option>NDURE</option>
               </Form.Select>
         </Form>
-        <Container className='mt-3 d-flex'>
+        <Container className='mt-3 d-flex ps-3'>
             <Button variant="info" className='me-3 w-50'><BiFilterAlt className='pe-1'/>Filter</Button>
             <Button variant="danger" className='w-50'><BsPower className='pe-1'/>Reset</Button>
         </Container>
