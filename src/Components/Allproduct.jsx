@@ -34,14 +34,18 @@ function Allproduct() {
                     name="group1"
                     type='checkbox'
                 /></td>
-                <td >{val.Name}</td>
-                <td >{val.code}</td>
-                <td >{val.Category}</td>
-                <td >{val.brand}</td>
-                <td >{val.price}</td>
-                <td >{val.unit}</td>
-                <td >{val.quantity}</td>
-                <td style={{cursor: "pointer"}}><BsEyeFill title='view'/> <FiEdit title='edit'/><TiDeleteOutline title='delete'/></td>
+                <td>{val.Name}</td>
+                <td>{val.code}</td>
+                <td>{val.Category}</td>
+                <td>{val.brand}</td>
+                <td>{val.price}</td>
+                <td>{val.unit}</td>
+                <td>{val.quantity}</td>
+                <td><BsEyeFill/>
+                <Link to='/updateproduct' style={{color:"black"}}>
+                    <FiEdit/>
+                    </Link>
+                    <TiDeleteOutline/></td>
             </tr>
         )
     }

@@ -9,7 +9,7 @@ import Navbar from './Navbar';
 import SideBar from './SideBar';
 import Footer from './Footer';
 
-function CreateProduct() {
+function UpdateProduct() {
   return (
     <>
     <Navbar/>
@@ -20,8 +20,8 @@ function CreateProduct() {
       <Container className='text-start'>
       <Row>
         <Col className="d-flex mt-4">
-          <h4>Create Product</h4>
-          <p className='mt-1 ms-3'>Product | Create Product</p>
+          <h4>Update Product</h4>
+          <p className='mt-1 ms-3'>Product | Update Product</p>
         </Col>
         <hr/>
       </Row>
@@ -198,4 +198,4 @@ function CreateProduct() {
   );
 }
 
-export default CreateProduct;
+export default UpdateProduct;
