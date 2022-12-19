@@ -15,6 +15,9 @@ import { AiOutlineFilter } from 'react-icons/ai';
 import { BsPower } from 'react-icons/bs';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
 import UsersStock from './UserStock';
+import { FiEdit } from "react-icons/fi";
+import { TiDeleteOutline } from "react-icons/ti";  
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
 
 export default function User() {
   const data = (val) => {
@@ -27,7 +30,7 @@ export default function User() {
         <td>{val.email}</td>
         <td>{val.phone}</td>
         <td>{val.status}</td>
-        <td></td>
+        <td style={{cursor: "pointer"}}><FiEdit onClick={handleCshow}/><TiDeleteOutline/></td>
       </tr>
     )
   }
@@ -40,6 +43,12 @@ export default function User() {
 
   const handlePuClose = () => setPuShow(false);
   const handlePuShow = () => setPuShow(true);
+
+  const [cshow, setCshow] = useState(false);
+
+  const handleCclose = () => setCshow(false);
+  const handleCshow = () => setCshow(true);
+
   return (
     <>
       <Navbar />
@@ -168,6 +177,73 @@ export default function User() {
                 <option value="1">Warehouse 1</option>
                 <option value="2">Warehouse 2</option>
               </Form.Select>
+            </Col>
+          </Row>
+          <Button variant="primary" type="submit" className="mt-4 mb-4">
+            Submit
+          </Button>
+        </Container>
+      </Modal>
+      <Modal show={cshow} onHide={handleCclose} dialogClassName="modal-90w">
+        <Container fluid>
+          <Modal.Header closeButton>
+            <Row>
+              <h3>Edit</h3> 
+            </Row>
+            <hr />
+          </Modal.Header>
+          <Row className="d-flex">
+            <Col >
+              <Form>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                  <Form.Label>Customer Name</Form.Label>
+                  <Form.Control type="text" placeholder="Customer Name" />
+                </Form.Group>
+              </Form>
+            </Col>
+            <Col>
+              <Form>
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                  <Form.Label>Email</Form.Label>
+                  <Form.Control type="email" placeholder="email" />
+                </Form.Group>
+              </Form>
+            </Col>
+          </Row>
+          <Row className="d-flex">
+            <Col>
+              <Form>
+                <Form.Group className="mb-3">
+                  <Form.Label>Phone</Form.Label>
+                  <Form.Control type="text" placeholder="Phone Number"></Form.Control>
+                </Form.Group>
+              </Form>
+            </Col>
+            <Col>
+              <Form.Group className="mb-3">
+                <Form.Label>Country</Form.Label>
+                <Form.Control type="text" placeholder="Country Name"></Form.Control>
+              </Form.Group>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <Form.Group className="mb-3">
+                <Form.Label>City</Form.Label>
+                <Form.Control type="text" placeholder="City Name"></Form.Control>
+              </Form.Group>
+            </Col>
+          </Row>
+          <Row>
+            <Form.Label>Address</Form.Label>
+            <Col>
+              <FloatingLabel controlId="floatingTextarea2" label="Address">
+                <Form.Control
+                  as="textarea"
+                  placeholder="Enter Address"
+                  style={{ height: '100px' }}
+                />
+              </FloatingLabel>
             </Col>
           </Row>
           <Button variant="primary" type="submit" className="mt-4 mb-4">

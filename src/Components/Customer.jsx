@@ -16,19 +16,15 @@ import { AiOutlineFilter } from 'react-icons/ai';
 import { BsPower } from 'react-icons/bs';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
 import CustomersStock from './CustomerStock';
+import { FiEdit } from "react-icons/fi";
+import { TiDeleteOutline } from "react-icons/ti";         
 
 export default function Customer() {
   const data = (val) => {
     return (
       <tr>
-        <td>
-          {/* <Form.Check
-          inline
-          label=""
-          name="group1"
-          type='checkbox'
-        /> */}
-        </td>
+       
+        
         <td>{val.code}</td>
         <td>{val.name}</td>
         <td>{val.phone}</td>
@@ -36,6 +32,7 @@ export default function Customer() {
         <td>{val.taxnumber}</td>
         <td>{val.totalsaledue}</td>
         <td>{val.totalsalereturndue}</td>
+        <td style={{cursor: "pointer"}}><FiEdit onClick={handleEshow}/><TiDeleteOutline/></td>
       </tr>
     )
   }
@@ -48,6 +45,14 @@ export default function Customer() {
 
   const handlePclose = () => setPshow(false);
   const handlePshow = () => setPshow(true);
+  const [eshow, setEshow] = useState(false);
+
+  const handleEclose = () => setEshow(false);
+  const handleEshow = () => setEshow(true);
+
+ 
+ 
+ 
   return (
     <>
       <Navbar />
@@ -83,7 +88,7 @@ export default function Customer() {
             <Table className='mt-5'>
               <thead>
                 <tr>
-                  <th>#</th>
+            
                   <th>Code</th>
                   <th>Name</th>
                   <th>Phone</th>
@@ -91,6 +96,7 @@ export default function Customer() {
                   <th>Tax numbar</th>
                   <th>Total Sale Due</th>
                   <th>Total Sale Return Due</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -171,6 +177,75 @@ export default function Customer() {
         </Container>
       </Modal>
 
+
+
+      <Modal show={eshow} onHide={handleEclose} dialogClassName="modal-90w">
+        <Container fluid>
+          <Modal.Header closeButton>
+            <Row>
+              <h3>Edit</h3> 
+            </Row>
+            <hr />
+          </Modal.Header>
+          <Row className="d-flex">
+            <Col >
+              <Form>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                  <Form.Label>Customer Name</Form.Label>
+                  <Form.Control type="text" placeholder="Customer Name" />
+                </Form.Group>
+              </Form>
+            </Col>
+            <Col>
+              <Form>
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                  <Form.Label>Email</Form.Label>
+                  <Form.Control type="email" placeholder="email" />
+                </Form.Group>
+              </Form>
+            </Col>
+          </Row>
+          <Row className="d-flex">
+            <Col>
+              <Form>
+                <Form.Group className="mb-3">
+                  <Form.Label>Phone</Form.Label>
+                  <Form.Control type="text" placeholder="Phone Number"></Form.Control>
+                </Form.Group>
+              </Form>
+            </Col>
+            <Col>
+              <Form.Group className="mb-3">
+                <Form.Label>Country</Form.Label>
+                <Form.Control type="text" placeholder="Country Name"></Form.Control>
+              </Form.Group>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <Form.Group className="mb-3">
+                <Form.Label>City</Form.Label>
+                <Form.Control type="text" placeholder="City Name"></Form.Control>
+              </Form.Group>
+            </Col>
+          </Row>
+          <Row>
+            <Form.Label>Address</Form.Label>
+            <Col>
+              <FloatingLabel controlId="floatingTextarea2" label="Address">
+                <Form.Control
+                  as="textarea"
+                  placeholder="Enter Address"
+                  style={{ height: '100px' }}
+                />
+              </FloatingLabel>
+            </Col>
+          </Row>
+          <Button variant="primary" type="submit" className="mt-4 mb-4">
+            Submit
+          </Button>
+        </Container>
+      </Modal>
       <Offcanvas show={pshow} onHide={handlePclose} placement='end'>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Filter</Offcanvas.Title>
