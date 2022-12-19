@@ -14,16 +14,13 @@ import SideBar from './SideBar';
 import Footer from './Footer';
 import {Link} from 'react-router-dom';
 import PurchaseStock from "./AllpurchaseStock";
+import { FiEdit } from "react-icons/fi";
+import { TiDeleteOutline } from "react-icons/ti";
 
  function AllPurchases() {
   const data =(value)=>{
     return(
       <tr>
-        <td> <Form.Check
-            inline
-            name="group1"
-            type='checkbox'/>
-            </td>
       <td>{value.date}</td>
       <td>{value.reference}</td>
       <td>{value.supplier}</td>
@@ -33,6 +30,10 @@ import PurchaseStock from "./AllpurchaseStock";
       <td>{value.paid}</td>
       <td>{value.due}</td>
       <td>{value.paymentstatus}</td>
+      <td>
+        <FiEdit/>
+        <TiDeleteOutline />
+        </td>
       </tr>
     )
 
@@ -73,13 +74,6 @@ import PurchaseStock from "./AllpurchaseStock";
         <Table striped hover >
       <thead>
         <tr>
-          <th>
-            <Form.Check
-            inline
-            name="group1"
-            type='checkbox'
-          />
-          </th>
           <th>Date</th>
           <th>Reference</th>
           <th>Supplier</th>
@@ -89,6 +83,7 @@ import PurchaseStock from "./AllpurchaseStock";
           <th>Paid</th>
           <th>Due</th>
           <th>Payment Status</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Card from 'react-bootstrap/Card';
-import { BsBarChart, BsReceipt, BsCartDash, BsArrowReturnRight, BsArrowReturnLeft, BsPeopleFill, BsGraphUp } from "react-icons/bs";
+import { BsBarChart, BsReceipt, BsCartDash, BsArrowReturnRight, BsArrowReturnLeft, BsPeopleFill } from "react-icons/bs";
 import { MdProductionQuantityLimits } from "react-icons/md";
 import ListGroup from 'react-bootstrap/ListGroup';
 import Offcanvas from 'react-bootstrap/Offcanvas';
@@ -37,7 +37,7 @@ export default function SideBar() {
           <p className="text-primary" > Dashboard</p>
         </Card>
       </Link>
-      <Card style={{ width: '6rem', height: '7rem' }}>
+      <Card style={{ width: '6rem', height: '7rem' ,cursor:"pointer" }}>
         <MdProductionQuantityLimits onClick={handleShow} style={{fontSize: "3rem"}} className="text-primary ms-4 mt-3" />
         <p className="text-primary" onClick={handleShow} > Product </p>
         <Offcanvas show={pshow} onHide={handleClose}>
@@ -61,7 +61,7 @@ export default function SideBar() {
         </Offcanvas>
       </Card>
 
-      <Card style={{ width: '6rem', height: '7rem' }}>
+      <Card style={{ width: '6rem', height: '7rem' ,cursor: "pointer" }}>
         <BsReceipt onClick={handlePrShow} style={{fontSize: "3rem"}} className="text-primary ms-4 mt-3" />
         <p className="text-primary" onClick={handlePrShow} > Purchase</p>
         <Offcanvas show={prshow} onHide={handlePrClose}>
@@ -79,7 +79,7 @@ export default function SideBar() {
         </Offcanvas>
       </Card>
 
-      <Card style={{ width: '6rem', height: '7rem' }}>
+      <Card style={{ width: '6rem', height: '7rem' ,cursor: "pointer" }}>
         <BsCartDash onClick={handleSaShow} style={{fontSize: "3rem"}} className="text-primary ms-4 mt-3" />
         <p className="text-primary" onClick={handleSaShow}> Sale</p>
         <Offcanvas show={sshow} onHide={handleSaClose}>
@@ -111,7 +111,7 @@ export default function SideBar() {
       </Card>
         </Link>
 
-      <Card style={{ width: '6rem', height: '7rem' }}>
+      <Card style={{ width: '6rem', height: '7rem' , cursor:"pointer"}} >
         <BsPeopleFill onClick={handlePeShow} style={{fontSize: "3rem"}} className="text-primary ms-4 mt-3" />
         <p className="text-primary" onClick={handlePeShow} >People</p>
         <Offcanvas show={peshow} onHide={handlePeClose}>
@@ -130,11 +130,6 @@ export default function SideBar() {
     </ListGroup>
         </Offcanvas.Body>
         </Offcanvas>
-      </Card>
-
-      <Card style={{ width: '6rem', height: '7rem' }}>
-        <BsGraphUp style={{fontSize: "3rem"}} className="text-primary ms-4 mt-3" />
-        <p className="text-primary">Report</p>
       </Card>
     </Container>
     </>

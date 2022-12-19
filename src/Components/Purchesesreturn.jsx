@@ -45,14 +45,6 @@ function Purchasesreturn() {
                 <Table striped hover className='mt-4' responsive="sm">
                     <thead>
                         <tr>
-                            <th>
-                                <Form.Check
-                                    inline
-                                    label=""
-                                    name="group1"
-                                    type='checkbox'
-                                />
-                            </th>
                             <th>Date</th>
                             <th>Reference</th>
                             <th>Supplier</th>

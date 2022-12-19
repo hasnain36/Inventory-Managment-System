@@ -14,6 +14,8 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { AiOutlineFilter } from 'react-icons/ai';
 import { BsPower } from 'react-icons/bs';
+import { FiEdit } from "react-icons/fi";
+import { TiDeleteOutline } from "react-icons/ti";
 import { AiOutlinePlusCircle } from 'react-icons/ai';
 import SuppliersStock from './SuppliersStock';
 
@@ -21,13 +23,6 @@ export default function Suppliers() {
   const data = (val) => {
     return (
       <tr>
-        <td><Form.Check
-          inline
-          label=""
-          name="group1"
-          type='checkbox'
-        />
-        </td>
         <td>{val.code}</td>
         <td>{val.name}</td>
         <td>{val.phone}</td>
@@ -36,7 +31,7 @@ export default function Suppliers() {
         <td>{val.taxnumber}</td>
         <td>{val.totalsaledue}</td>
         <td>{val.totalsalereturndue}</td>
-        <td></td>
+        <td><FiEdit/><TiDeleteOutline/></td>
       </tr>
     )
   }
@@ -83,14 +78,6 @@ export default function Suppliers() {
             <Table className='mt-5'>
               <thead>
                 <tr>
-                  <th>
-                    <Form.Check
-                      inline
-                      label=""
-                      name="group1"
-                      type='checkbox'
-                    />
-                  </th>
                   <th>Code</th>
                   <th>Name</th>
                   <th>Phone</th>

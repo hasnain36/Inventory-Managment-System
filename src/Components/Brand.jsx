@@ -24,14 +24,6 @@ function Brand() {
   const data = (val) => {
     return (
       <tr style={{ textAliign: "start" }}>
-        <td>
-          <Form.Check
-            inline
-            label=""
-            name="group1"
-            type="checkbox"
-          ></Form.Check>
-        </td>
         <td>{val.brandname}</td>
         <td>{val.branddes}</td>
         <td>
@@ -76,9 +68,6 @@ function Brand() {
             <Table striped hover className="mt-4">
               <thead>
                 <tr>
-                  <th>
-                    <Form.Check inline label="" name="group1" type="checkbox" />
-                  </th>
                   <th>Brand Name</th>
                   <th>Brand Description</th>
                   <th>Action</th>

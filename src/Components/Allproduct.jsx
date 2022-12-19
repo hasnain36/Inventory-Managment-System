@@ -14,7 +14,6 @@ import SideBar from './SideBar';
 import Footer from './Footer';
 import { Link } from 'react-router-dom';
 import AllProductStock from './AllProductStock';
-import { BsEyeFill } from "react-icons/bs";
 import { FiEdit } from "react-icons/fi";
 import { TiDeleteOutline } from "react-icons/ti";
 
@@ -27,13 +26,7 @@ function Allproduct() {
 
     const data = (val) => {
         return (
-            <tr style={{textAlign:"start"}}>
-                <td style={{textAlign : "center"}}><Form.Check
-                    inline
-                    label=""
-                    name="group1"
-                    type='checkbox'
-                /></td>
+            <tr style={{textAlign:"center"}}>
                 <td>{val.Name}</td>
                 <td>{val.code}</td>
                 <td>{val.Category}</td>
@@ -41,11 +34,11 @@ function Allproduct() {
                 <td>{val.price}</td>
                 <td>{val.unit}</td>
                 <td>{val.quantity}</td>
-                <td><BsEyeFill/>
+                <td style={{cursor:'pointer'}}>
                 <Link to='/updateproduct' style={{color:"black"}}>
-                    <FiEdit/>
-                    </Link>
-                    <TiDeleteOutline/></td>
+                    <FiEdit />
+                    </Link >
+                    <TiDeleteOutline style={{cursor:'pointer'}}/></td>
             </tr>
         )
     }
@@ -80,24 +73,16 @@ function Allproduct() {
                     </Row>
                     <Row>
                         <Table striped hover className='mt-4'>
-                            <thead>
+                            <thead style={{textAlign:"center"}}>
                                 <tr>
-                                    <th>
-                                        <Form.Check
-                                            inline
-                                            label=""
-                                            name="group1"
-                                            type='checkbox'
-                                        />
-                                    </th>
-                                    <th style={{textAlign:"start"}}>Name</th>
-                                    <th style={{textAlign:"start"}}>Code</th>
-                                    <th style={{textAlign:"start"}}>Category</th>
-                                    <th style={{textAlign:"start"}}>Brand</th>
-                                    <th style={{textAlign:"start"}}>Price</th>
-                                    <th style={{textAlign:"start"}}>Unit</th>
-                                    <th style={{textAlign:"start"}}>Quantity</th>
-                                    <th style={{textAlign:"start"}}>Action</th>
+                                    <th>Name</th>
+                                    <th>Code</th>
+                                    <th>Category</th>
+                                    <th>Brand</th>
+                                    <th>Price</th>
+                                    <th>Unit</th>
+                                    <th>Quantity</th>
+                                    <th >Action</th>
                                 </tr>
                             </thead>
                             <tbody>

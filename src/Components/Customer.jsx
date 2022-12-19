@@ -21,14 +21,6 @@ export default function Customer() {
   const data = (val) => {
     return (
       <tr>
-        <td>
-          {/* <Form.Check
-          inline
-          label=""
-          name="group1"
-          type='checkbox'
-        /> */}
-        </td>
         <td>{val.code}</td>
         <td>{val.name}</td>
         <td>{val.phone}</td>
@@ -73,7 +65,7 @@ export default function Customer() {
               </Form>
             </Col>
             <Col lg={9} style={{ textAlign: 'end' }}>
-              <Button variant="outline-info" onClick={handlePshow} className='me-4' ><AiOutlineFilter />Filter</Button>
+              <Button variant="outline-info" onClick={handlePshow} className='me-4'><AiOutlineFilter />Filter</Button>
               <Button variant="info" onClick={handleShow}><AiOutlinePlusCircle />Create</Button>
 
             </Col>
@@ -83,7 +75,6 @@ export default function Customer() {
             <Table className='mt-5'>
               <thead>
                 <tr>
-                  <th>#</th>
                   <th>Code</th>
                   <th>Name</th>
                   <th>Phone</th>

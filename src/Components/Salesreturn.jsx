@@ -12,7 +12,6 @@ import Navbar from './Navbar';
 import { BsPower } from "react-icons/bs";
 import { BiFilterAlt } from "react-icons/bi";
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import { BsEyeFill } from "react-icons/bs";
 import { FiEdit } from "react-icons/fi";
 import { TiDeleteOutline } from "react-icons/ti";
 import SaleReturnStock from './SaleReturnStock';
@@ -20,13 +19,7 @@ import SaleReturnStock from './SaleReturnStock';
 function Salesreturn() {
     const data = (val) => {
         return (
-            <tr style={{textAlign:"start"}}>
-                <td><Form.Check
-                    inline
-                    label=""
-                    name="group1"
-                    type='checkbox'
-                /></td>
+            <tr >
                 <td>{val.date}</td>
                 <td>{val.reference}</td>
                 <td>{val.customer}</td>
@@ -37,7 +30,7 @@ function Salesreturn() {
                 <td>{val.paid}</td>
                 <td>{val.due}</td>
                 <td>{val.paymentstatus}</td>
-                <td style={{textAlign:"start"}}><BsEyeFill/> <FiEdit/><TiDeleteOutline/></td>
+                <td><FiEdit/><TiDeleteOutline/></td>
             </tr>
         )
     }
@@ -74,14 +67,6 @@ function Salesreturn() {
                 <Table striped hover className='mt-4' responsive='sm'>
                     <thead>
                         <tr>
-                            <th>
-                                <Form.Check
-                                    inline
-                                    label=""
-                                    name="group1"
-                                    type='checkbox'
-                                />
-                            </th>
                             <th>Date</th>
                             <th>Reference</th>
                             <th>Customer</th>

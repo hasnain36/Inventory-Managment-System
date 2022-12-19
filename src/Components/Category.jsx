@@ -23,12 +23,6 @@ function Category() {
     const data = (val) => {
         return (
             <tr>
-                <td><Form.Check
-                    inline
-                    label=""
-                    name="group1"
-                    type='checkbox'
-                /></td>
                 <td >{val.categoryname}</td>
                 <td>{val.categorycode}</td>
                 <td><FiEdit onClick={handleShow}/><TiDeleteOutline/></td>
@@ -65,14 +59,6 @@ function Category() {
                         <Table striped hover className='mt-4'>
                             <thead>
                                 <tr>
-                                    <th>
-                                        <Form.Check
-                                            inline
-                                            label=""
-                                            name="group1"
-                                            type='checkbox'
-                                        />
-                                    </th>
                                     <th >Category Name</th>
                                     <th>Category Code</th>
                                     <th>Action</th>

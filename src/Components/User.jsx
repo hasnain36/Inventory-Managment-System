@@ -15,6 +15,8 @@ import { AiOutlineFilter } from 'react-icons/ai';
 import { BsPower } from 'react-icons/bs';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
 import UsersStock from './UserStock';
+import { FiEdit } from "react-icons/fi";
+import { TiDeleteOutline } from "react-icons/ti";
 
 export default function User() {
   const data = (val) => {
@@ -27,7 +29,7 @@ export default function User() {
         <td>{val.email}</td>
         <td>{val.phone}</td>
         <td>{val.status}</td>
-        <td></td>
+        <td><FiEdit/><TiDeleteOutline/></td>
       </tr>
     )
   }

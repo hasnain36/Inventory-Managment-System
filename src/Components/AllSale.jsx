@@ -12,7 +12,9 @@ import Footer from './Footer';
 import { Link } from 'react-router-dom';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { BiFilterAlt } from "react-icons/bi";
-import { BsPower,BsThreeDotsVertical } from "react-icons/bs";
+import { BsPower} from "react-icons/bs";
+import { FiEdit } from "react-icons/fi";
+import { TiDeleteOutline } from "react-icons/ti";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import AllSaleStock from './AllSaleStock';
 
@@ -20,11 +22,6 @@ function AllSale() {
 const data1=(value1)=>{
     return(
         <tr>
-             <td> <Form.Check
-            inline
-            name="group1"
-            type='checkbox'/>
-            </td>
             <td>{value1.date}</td>
             <td>{value1.reference}</td>
             <td>{value1.addedby}</td>
@@ -36,7 +33,10 @@ const data1=(value1)=>{
             <td>{value1.due}</td>
             <td>{value1.paymentstatus}</td>
             <td>{value1.due}</td>
-            <td><BsThreeDotsVertical/></td>
+            <td>
+          <FiEdit onClick={handleShow} />
+          <TiDeleteOutline />
+        </td>
         </tr>
     )
 
@@ -79,14 +79,6 @@ const data1=(value1)=>{
                         <Table striped hover className='mt-4'>
                             <thead>
                                 <tr>
-                                    <th>
-                                        <Form.Check
-                                            inline
-                                            label=""
-                                            name="group1"
-                                            type='checkbox'
-                                        />
-                                    </th>
                                     <th>Date</th>
                                     <th>Reference</th>
                                     <th>Added by</th>
