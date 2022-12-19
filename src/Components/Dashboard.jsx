@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Card from 'react-bootstrap/Card';
 import {BsCartDash , BsCartPlus } from "react-icons/bs";
 import { BiRightArrowCircle ,BiLeftArrowCircle } from "react-icons/bi";
@@ -10,29 +10,64 @@ import Navbar from './Navbar'
 import Footer from './Footer';
 import SideBar from './SideBar';
 import {Link} from 'react-router-dom';
+import {Stock , Stock2 ,Stock3} from './Stock';
 
 
 function Dashboard() {
+  const data =(val) =>{
+    return(
+        <tr>
+          <td>{val.code}</td>
+          <td>{val.product}</td>
+          <td>{val.quantity}</td>
+          <td>{val.aquantity}</td>
+        </tr>
+    )
+  }
+  const data2 =(val2) =>{
+    return(
+        <tr>
+          
+          <td>{val2.product}</td>
+          <td>{val2.quantity}</td>
+          <td>{val2.grandtotal}</td>
+        </tr>
+    )
+  }
+  const data3 =(val3) =>{
+    return(
+        <tr>
+          
+          <td>{val3.reference}</td>
+          <td>{val3.customer}</td>
+          <td>{val3.status}</td>
+          <td>{val3.grandtotal}</td>
+          <td>{val3.paid}</td>
+          <td>{val3.due}</td>
+          <td>{val3.paymentstatus}</td>
+        </tr>
+    )
+  }
   return (
     <>
     <Navbar/>
     <div className='d-flex'>
-      <div>
+      <div >
         <SideBar/>
       </div>
-    <div>
-    <Container className='ps-5'>
+    <div className='ps-4'>
+    <Container className='ps-4'>
     <Row xs={1} md={2} lg={4}>
     <Col >
     <Link to='/allsale' style={{textDecoration:"none"}}>
-    <Card style={{ width: '15.5rem' }} className="mt-4">
+    <Card style={{ width: '14rem' }} className="mt-1 ms-4">
       <div className='d-flex' >
       <div className='text-primary '>
         <Card.Body>
-        <BsCartDash size={'1x'} cursor={'pointer'} value={{color:'primary'}}/>
+        <BsCartDash style={{fontSize: "4rem"}} cursor={'pointer'} value={{color:'primary'}}/>
       </Card.Body>
       </div>
-      <div className='mt-4'>
+      <div className='mt-2'>
         <Card.Body>
         <p>Sale</p>
         <p className='text-primary'>117500</p>
@@ -44,14 +79,14 @@ function Dashboard() {
     </Col> 
     <Col>
    <Link to='/allpurchase' style={{textDecoration:"none"}}>
-   <Card style={{ width: '16rem' }} className="mt-4">
+   <Card style={{ width: '14rem' }} className="mt-1 ms-4">
     <div className='d-flex '>
       <div className='text-primary '>
         <Card.Body >
-        <BsCartPlus size={'1x'} cursor={'pointer'}/>
+        <BsCartPlus style={{fontSize: "4rem"}} cursor={'pointer'}/>
       </Card.Body>
       </div>
-      <div className='mt-4'>
+      <div className='mt-2'>
         <Card.Body>
         <p>Purchase</p>
         <p className='text-primary '>117500</p>
@@ -63,14 +98,14 @@ function Dashboard() {
     </Col>
     <Col>
     <Link to='/salereturn' style={{textDecoration:"none"}}>
-    <Card style={{ width: '15rem' }} className="mt-4">
+    <Card style={{ width: '14rem' }} className="mt-1 ms-4">
     <div className='d-flex '>
       <div className='text-primary '>
         <Card.Body >
-        <BiRightArrowCircle  size={'1x'} cursor={'pointer'}/>
+        <BiRightArrowCircle  style={{fontSize: "4rem"}} cursor={'pointer'}/>
       </Card.Body>
       </div>
-      <div className='mt-4'>
+      <div className='mt-2'>
         <Card.Body>
         <p>Sale Return</p>
         <p className='text-primary '>117500</p>
@@ -83,16 +118,16 @@ function Dashboard() {
     </Col>
     <Col>
    <Link to='/purchasereturn' style={{textDecoration:"none"}}>
-   <Card style={{ width: '15rem' }} className="mt-4">
+   <Card style={{ width: '14rem' }} className="mt-1 ms-4">
     <div className='d-flex '>
       <div className='text-primary '>
         <Card.Body >
-        <BiLeftArrowCircle  size={'1x'} cursor={'pointer'}/>
+        <BiLeftArrowCircle  style={{fontSize: "4rem"}} cursor={'pointer'}/>
       </Card.Body>
       </div>
-      <div className='mt-4'>
+      <div className='ps-1'>
         <Card.Body>
-        <p>Purchase Return</p>
+        Purchase Return
         <p className='text-primary '>117500</p>
         </Card.Body>
         </div>
@@ -103,12 +138,12 @@ function Dashboard() {
     </Row>
     </Container>
     <Container className='ps-5'>
-        <Row className='mt-4'sm={1} md={1} lg={4} >
+        <Row className='mt-2'sm={1} md={1} lg={4} >
             <Col className='mt-4' lg={8}>
             <Card  >
                 <h5 className='text-start mt-4 ms-3'>Stock Alert</h5>
                 <hr/>
-            <Table responsive="xl">
+            <Table responsive="sm">
         <thead>
           <tr>
             <th>Code</th>
@@ -118,24 +153,7 @@ function Dashboard() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
+          {Stock.map(data)}
         </tbody>
       </Table>
             </Card>
@@ -153,26 +171,7 @@ function Dashboard() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
-          <tr>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
-          <tr>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
-          <tr>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
+         {Stock2.map(data2)}
         </tbody>
       </Table>
             </Card>
@@ -198,33 +197,7 @@ function Dashboard() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
-          <tr>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
-          <tr>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
+         {Stock3.map(data3)}
         </tbody>
       </Table>
                 </Card>

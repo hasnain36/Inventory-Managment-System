@@ -14,13 +14,33 @@ import Footer from './Footer'
 import { BsPower } from "react-icons/bs";
 import { BiFilterAlt } from "react-icons/bi";
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import PurchasereturnStock from './PurchasereturnStock';
 
 
 function Purchasesreturn() {
+    const data = (val) => {
+        return(
+            <tr>
+                <td>{val.date}</td>
+                <td>{val.reference}</td>
+                <td>{val.supplier}</td>
+                <td>{val.warehouse}</td>
+                <td>{val.purchaseref}</td>
+                <td>{val.status}</td>
+                <td>{val.grandtotal}</td>
+                <td>{val.paid}</td>
+                <td>{val.due}</td>
+                <td>{val.paymentstatus}</td>
+                
+            </tr>
+        )
+    }
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+     
+   
     return (
         <>
         <Navbar/>
@@ -71,48 +91,7 @@ function Purchasesreturn() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                        {PurchasereturnStock.map(data)}
                     </tbody>
                 </Table>
             </Row>

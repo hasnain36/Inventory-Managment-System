@@ -6,7 +6,6 @@ import Container from 'react-bootstrap/Container';
 import { BsSearch ,BsPower } from "react-icons/bs";
 import { BiFilterAlt } from "react-icons/bi";
 import { AiOutlinePlusCircle } from "react-icons/ai";
-import { BsJustifyLeft } from "react-icons/bs";
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Table from 'react-bootstrap/Table';
@@ -25,23 +24,18 @@ function Allproduct() {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const data = (val) => {
-        return (
+
+    const data= (val)=> {
+        return(
             <tr>
-                <td><Form.Check
-                    inline
-                    label=""
-                    name="group1"
-                    type='checkbox'
-                /></td>
-                <td style={{textAlign:"start"}}>{val.Name}</td>
-                <td style={{textAlign:"start"}}>{val.code}</td>
-                <td style={{textAlign:"start"}}>{val.Category}</td>
-                <td style={{textAlign:"start"}}>{val.brand}</td>
-                <td style={{textAlign:"start"}}>{val.price}</td>
-                <td style={{textAlign:"start"}}>{val.unit}</td>
-                <td style={{textAlign:"start"}}>{val.quantity}</td>
-                <td style={{textAlign:"start"}}><BsEyeFill/> <FiEdit/><TiDeleteOutline/></td>
+                <td>{val.name}</td>
+                <td>{val.code}</td>
+                <td>{val.Category}</td>
+                <td>{val.brand}</td>
+                <td>{val.price}</td>
+                <td>{val.unit}</td>
+                <td>{val.quantity}</td>
+                <td><BsEyeFill/></td>
             </tr>
         )
     }

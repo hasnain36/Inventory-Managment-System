@@ -15,8 +15,30 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import { AiOutlineFilter } from 'react-icons/ai';
 import { BsPower } from 'react-icons/bs';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
+import CustomersStock from './CustomerStock';
 
 export default function Customer() {
+  const data = (val) => {
+    return (
+      <tr>
+        <td>
+          {/* <Form.Check
+          inline
+          label=""
+          name="group1"
+          type='checkbox'
+        /> */}
+        </td>
+        <td>{val.code}</td>
+        <td>{val.name}</td>
+        <td>{val.phone}</td>
+        <td>{val.email}</td>
+        <td>{val.taxnumber}</td>
+        <td>{val.totalsaledue}</td>
+        <td>{val.totalsalereturndue}</td>
+      </tr>
+    )
+  }
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -72,26 +94,7 @@ export default function Customer() {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
+                {CustomersStock.map(data)}
               </tbody>
 
 

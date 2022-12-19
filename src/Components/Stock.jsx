@@ -1,25 +1,139 @@
-const PurchaseStock=[
+const Stock =[
     {
-      date: 22,
-      reference: "PR-222",
-      supplier: "IT Supply",
-      warehouse: "warehouse 1",
-      status:  "received",
-      grandtotal: 1400,
-      paid: 1400,
-      due:0.00,
-      paymentstatus:"paid",
+        code: 1,
+        product: "Soap",
+        quantity : 5,
+        aquantity : 10,
     },
     {
-      date: 26,
-      reference: "PR-333",
-      supplier: "warehouse Supply",
-      warehouse: "warehouse 1",
-      status:  "pending",
-      grandtotal: 1000,
-      paid: 900,
-      due: 100,
-      paymentstatus:"partial",
+        code: 2,
+        product: "Shampoo",
+        quantity : 5,
+        aquantity : 10,
+    },
+    {
+        code: 2,
+        product: "Shampoo",
+        quantity : 5,
+        aquantity : 10,
+    },
+    {
+        code: 2,
+        product: "Shampoo",
+        quantity : 5,
+        aquantity : 10,
+    },
+    {
+        code: 2,
+        product: "Shampoo",
+        quantity : 5,
+        aquantity : 10,
+    },
+    {
+        code: 2,
+        product: "Shampoo",
+        quantity : 5,
+        aquantity : 10,
+    },
+    {
+        code: 2,
+        product: "Shampoo",
+        quantity : 5,
+        aquantity : 10,
+    },
+    {
+        code: 2,
+        product: "Shampoo",
+        quantity : 5,
+        aquantity : 10,
+    },
+    {
+        code: 2,
+        product: "Shampoo",
+        quantity : 5,
+        aquantity : 10,
+    },
+    {
+        code: 3,
+        product: "Fase Wash",
+        quantity : 5,
+        aquantity : 10,
     }
 ]
-export default PurchaseStock;
+
+const Stock2=[
+    {
+        product: "Fase Wash",
+        quantity : 5,
+        grandtotal : 4500
+    },
+    {
+        product: "Fase Wash",
+        quantity : 5,
+        grandtotal : 4500
+    },
+    {
+        product: "Fase Wash",
+        quantity : 5,
+        grandtotal : 4500
+    },
+    {
+        product: "Fase Wash",
+        quantity : 5,
+        grandtotal : 4500
+    },
+    {
+        product: "Fase Wash",
+        quantity : 5,
+        grandtotal : 4500
+    },
+]
+const Stock3 =[
+    {
+        reference : "SL-117",
+        customer : "Hasnain",
+        status  : "paid",
+        grandtotal:4500,
+        paid : 4000,
+        due : 500,
+        paymentstatus : "paid"
+    },
+    {
+        reference : "SL-117",
+        customer : "Hasnain",
+        status  : "paid",
+        grandtotal:4500,
+        paid : 4000,
+        due : 500,
+        paymentstatus : "paid"
+    },
+    {
+        reference : "SL-117",
+        customer : "Hasnain",
+        status  : "paid",
+        grandtotal:4500,
+        paid : 4000,
+        due : 500,
+        paymentstatus : "paid"
+    },
+    {
+        reference : "SL-117",
+        customer : "Hasnain",
+        status  : "paid",
+        grandtotal:4500,
+        paid : 4000,
+        due : 500,
+        paymentstatus : "paid"
+    },
+    {
+        reference : "SL-117",
+        customer : "Hasnain",
+        status  : "paid",
+        grandtotal:4500,
+        paid : 4000,
+        due : 500,
+        paymentstatus : "paid"
+    },
+]
+
+export  {Stock,Stock2 ,Stock3};

@@ -30,15 +30,15 @@ export default function SideBar() {
   const handlePeShow = () => setPeshow(true);
   return (
     <>
-    <Container fluid className='sticky'>
+    <Container fluid sticky='true' className='d-none d-sm-block d-sm-none d-md-block'>
       <Link to='/dashboard' style={{textDecoration:"none"}}>
-        <Card style={{ width: '7rem', height: '7rem' }}>
-          <BsBarChart size={'sm'} className="text-primary" />
+        <Card style={{ width: '6rem', height: '7rem' }}>
+          <BsBarChart style={{fontSize: "3rem"}} className="text-primary ms-4 mt-3" />
           <p className="text-primary" > Dashboard</p>
         </Card>
       </Link>
-      <Card style={{ width: '7rem', height: '7rem' }}>
-        <MdProductionQuantityLimits onClick={handleShow} size={'sm'} className="text-primary" />
+      <Card style={{ width: '6rem', height: '7rem' }}>
+        <MdProductionQuantityLimits onClick={handleShow} style={{fontSize: "3rem"}} className="text-primary ms-4 mt-3" />
         <p className="text-primary" onClick={handleShow} > Product </p>
         <Offcanvas show={pshow} onHide={handleClose}>
           <Offcanvas.Body>
@@ -61,7 +61,7 @@ export default function SideBar() {
         </Offcanvas>
       </Card>
 
-      <Card style={{ width: '5rem', height: '5rem' }}>
+      <Card style={{ width: '6rem', height: '7rem' }}>
         <BsReceipt onClick={handlePrShow} size={'sm'} className="text-primary" />
         <p className="text-primary" onClick={handlePrShow} > Purchase</p>
         <Offcanvas show={prshow} onHide={handlePrClose}>
@@ -79,8 +79,8 @@ export default function SideBar() {
         </Offcanvas>
       </Card>
 
-      <Card style={{ width: '7rem', height: '7rem' }}>
-        <BsCartDash onClick={handleSaShow} size={'1x'} className="text-primary" />
+      <Card style={{ width: '6rem', height: '7rem' }}>
+        <BsCartDash onClick={handleSaShow} style={{fontSize: "3rem"}} className="text-primary ms-4 mt-3" />
         <p className="text-primary" onClick={handleSaShow}> Sale</p>
         <Offcanvas show={sshow} onHide={handleSaClose}>
           <Offcanvas.Body>
@@ -98,21 +98,21 @@ export default function SideBar() {
       </Card>
 
         <Link to='/salereturn' style={{textDecoration:"none"}}>
-      <Card style={{ width: '7rem', height: '7rem' }}>
-        <BsArrowReturnRight size={'1x'} className="text-primary" />
+      <Card style={{ width: '6rem', height: '7rem' }}>
+        <BsArrowReturnRight style={{fontSize: "3rem"}} className="text-primary ms-4 mt-3" />
         <p className="text-primary">Sale Return</p>
       </Card>
         </Link>
 
         <Link to='/purchasereturn' style={{textDecoration:"none"}}>
-      <Card style={{ width: '7rem', height: '7rem' }}>
-        <BsArrowReturnLeft size={'1x'} className="text-primary" />
+      <Card style={{ width: '6rem', height: '7rem' }}>
+        <BsArrowReturnLeft style={{fontSize: "4rem"}} className="text-primary ms-3 mt-2" />
         <p className="text-primary">Purchase Return</p>
       </Card>
         </Link>
 
-      <Card style={{ width: '7rem', height: '7rem' }}>
-        <BsPeopleFill onClick={handlePeShow} size={'1x'} className="text-primary" />
+      <Card style={{ width: '6rem', height: '7rem' }}>
+        <BsPeopleFill onClick={handlePeShow} style={{fontSize: "3rem"}} className="text-primary ms-4 mt-3" />
         <p className="text-primary" onClick={handlePeShow} >People</p>
         <Offcanvas show={peshow} onHide={handlePeClose}>
       <Offcanvas.Body>
@@ -132,8 +132,8 @@ export default function SideBar() {
         </Offcanvas>
       </Card>
 
-      <Card style={{ width: '7rem', height: '7rem' }}>
-        <BsGraphUp size={'1x'} className="text-primary" />
+      <Card style={{ width: '6rem', height: '7rem' }}>
+        <BsGraphUp style={{fontSize: "3rem"}} className="text-primary ms-4 mt-3" />
         <p className="text-primary">Report</p>
       </Card>
     </Container>
