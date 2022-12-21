@@ -26,7 +26,7 @@ function Brand() {
       <tr style={{ textAliign: "start" }}>
         <td>{val.brandname}</td>
         <td>{val.branddes}</td>
-        <td>
+        <td style={{cursor:'pointer'}}>
           <FiEdit onClick={handleShow} />
           <TiDeleteOutline />
         </td>

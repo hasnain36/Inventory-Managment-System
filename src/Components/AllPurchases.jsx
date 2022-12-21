@@ -30,8 +30,8 @@ import { TiDeleteOutline } from "react-icons/ti";
       <td>{value.paid}</td>
       <td>{value.due}</td>
       <td>{value.paymentstatus}</td>
-      <td>
-        <FiEdit/>
+      <td style={{cursor:'pointer'}}>
+        <Link to ="/editpurchase" style={{color:'black'}}><FiEdit/></Link>
         <TiDeleteOutline />
         </td>
       </tr>

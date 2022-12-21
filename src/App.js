@@ -19,6 +19,10 @@ import Purchasesreturn from './Components/Purchesesreturn';
 import AllSale from './Components/AllSale';
 import Signup from './Components/Signup';
 import UpdateProduct from './Components/UpdateProduct';
+import EditPurchase from './Components/EditPurchase';
+import EditSale from './Components/EditSale';
+import EditSalesReturn from './Components/EditSalesReturn';
+import EditPurchaseReturn from './Components/EditPurchaseReturn';
 function App() {
   return (
     <div className="App">
@@ -37,7 +41,6 @@ function App() {
           <Route path='/salesreturn' element={<Salesreturn/>}/>
           <Route path='/suppliers' element={<Suppliers/>}/>
           <Route path='/user' element={<User/>}/>
-         
           <Route path='/purchasereturn' element={<Purchasesreturn/>}/>
           <Route path='/salereturn' element={<Salesreturn/>}/>
           <Route path='/allsale' element={<AllSale/>}/>
@@ -45,6 +48,10 @@ function App() {
           <Route path='/suppliers' element={<Suppliers/>}/>
           <Route path='/user' element={<User/>}/>
           <Route path='/updateproduct' element={<UpdateProduct/>}/>
+          <Route path='/editpurchase' element={<EditPurchase/>}/>
+          <Route path='/editsale' element={<EditSale/>}/>
+          <Route path='/editsalesreturn' element={<EditSalesReturn/>}/>
+          <Route path='/editpurchasereturn' element={<EditPurchaseReturn/>}/>
       </Routes>
     </div>
   );

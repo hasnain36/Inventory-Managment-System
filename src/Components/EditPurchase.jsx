@@ -12,7 +12,7 @@ import SideBar from './SideBar';
 import Footer from './Footer';
 import Navbar from './Navbar';
 
- function CreatePurchase() {
+ function EditPurchase() {
   return (
     <>
     <Navbar/>
@@ -25,7 +25,7 @@ import Navbar from './Navbar';
           <Col className='d-flex mt-4' >
             <h4>Create Purchase</h4>
             <p className='mt-1 ms-3'>All Purchases |</p>
-            <p className='mt-1 ms-3'>Create Purchase</p>
+            <p className='mt-1 ms-3'>Edit Purchase</p>
             </Col>
             <hr/>
         </Row>
@@ -215,4 +215,4 @@ import Navbar from './Navbar';
     </>
   )
 }
-export default CreatePurchase;
+export default EditPurchase;

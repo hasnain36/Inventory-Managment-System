@@ -10,22 +10,22 @@ import Button from 'react-bootstrap/Button';
 import { BsSearch } from "react-icons/bs";
 import SideBar from './SideBar';
 import Footer from './Footer';
-import Navbar from './Navbar';
+import Navbar from './Navbar'
 
- function CreatePurchase() {
+function EditSale() {
   return (
     <>
     <Navbar/>
     <div className="d-flex">
-      <div>
-        <SideBar/>
-      </div>
-      <Container className='text-start'>
+        <div>
+            <SideBar/>
+        </div>
+        <Container className='text-start'>
         <Row >
           <Col className='d-flex mt-4' >
-            <h4>Create Purchase</h4>
-            <p className='mt-1 ms-3'>All Purchases |</p>
-            <p className='mt-1 ms-3'>Create Purchase</p>
+            <h4>Edit Sale</h4>
+            <p className='mt-1 ms-3'>All Sales |</p>
+            <p className='mt-1 ms-3'>Edit Sale</p>
             </Col>
             <hr/>
         </Row>
@@ -41,12 +41,12 @@ import Navbar from './Navbar';
       <Col>
       <Form>
       <Form.Group className="mb-3">
-        <Form.Label>Supplier *</Form.Label>
-        <Form.Select >
-          <option>It Supply</option>
-          <option>Fruit supply</option>
-          <option>Schulist-Hickle</option>
-          <option>Corwin-Pfeffer</option>
+        <Form.Label>Customer *</Form.Label>
+        <Form.Select>
+          <option></option>
+          <option></option>
+          <option></option>
+          <option></option>
         </Form.Select>
       </Form.Group>
       </Form>
@@ -74,17 +74,19 @@ import Navbar from './Navbar';
           </Col>
         </Row>
         <Row>
-        <Table striped >
+            <p>Order Items *</p>
+        <Table striped hover>
       <thead>
         <tr>
           <th>#</th>
           <th>Product</th>
           <th>Net Unit Cost</th>
-          <th>Current Stock</th>
+          <th>Stock</th>
           <th>Qty</th>
           <th>Discount</th>
           <th>Tax</th>
           <th>Subtotal</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -97,18 +99,21 @@ import Navbar from './Navbar';
           <td></td>
           <td></td>
           <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
           <td></td>
         </tr>
         <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
           <td></td>
           <td></td>
           <td></td>
@@ -136,7 +141,7 @@ import Navbar from './Navbar';
           <td>Shipping</td>
           <td>$ 0.00</td>
         </tr>
-        <tr style={{fontWeight:'bold'}}>
+        <tr style={{fontWeight: 'bold'}}>
           <td>Grand Total</td>
           <td>$ 0.00</td>
         </tr>
@@ -197,7 +202,16 @@ import Navbar from './Navbar';
         </Form.Select>
       </Form.Group>
       </Col>
-      <Col></Col>
+      <Col>
+      <Form.Group className="mb-3">
+        <Form.Label>Payment Status </Form.Label>
+        <Form.Select style={{backgroundColor:'lightgray'}} >
+          <option>pending</option>
+          <option>received</option>
+          <option>ordered</option>
+        </Form.Select>
+      </Form.Group>
+      </Col>
       <Col></Col>
     </Row>
     <Form.Label>Note</Form.Label>
@@ -215,4 +229,4 @@ import Navbar from './Navbar';
     </>
   )
 }
-export default CreatePurchase;
+export default EditSale;

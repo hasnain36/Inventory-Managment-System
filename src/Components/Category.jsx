@@ -25,7 +25,7 @@ function Category() {
             <tr>
                 <td >{val.categoryname}</td>
                 <td>{val.categorycode}</td>
-                <td><FiEdit onClick={handleShow}/><TiDeleteOutline/></td>
+                <td style={{cursor:'pointer'}}><FiEdit onClick={handleShow}/><TiDeleteOutline/></td>
             </tr>
         )
     }
