@@ -2,7 +2,7 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Form from 'react-bootstrap/Form';
-import logo2 from '../images/logo2.png';
+import logo2 from '../Images/logo2.png';
 import { Link } from 'react-router-dom';
 
 function Header() {
@@ -14,8 +14,8 @@ function Header() {
        <p className='d-flex align-items-center text-dark'>
        <img
               src={logo2}
-              width="60"
-              height="60"
+              width="70"
+              height="70"
               className="d-inline-block align-top"
               alt="Logo"
             />

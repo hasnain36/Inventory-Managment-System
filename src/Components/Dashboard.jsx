@@ -143,7 +143,7 @@ function Dashboard() {
             <Card  >
                 <h5 className='text-start mt-4 ms-3'>Stock Alert</h5>
                 <hr/>
-            <Table responsive="sm">
+            <Table>
         <thead>
           <tr>
             <th>Code</th>
@@ -162,7 +162,7 @@ function Dashboard() {
             <Card>
             <h5 className='text-start mt-4 ms-3'>Top Selling Products (November)</h5>
                 <hr/>
-            <Table responsive="xl sm md lg">
+            <Table>
         <thead>
           <tr>
             <th>Product</th>
@@ -184,7 +184,7 @@ function Dashboard() {
                 <Card>
                 <h5 className='text-start mt-4 ms-3'>Recent Sales</h5>
                 <hr/>
-            <Table responsive="xl">
+            <Table >
         <thead>
           <tr>
             <th>Reference</th>

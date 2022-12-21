@@ -12,10 +12,9 @@ import AllProduct from './Components/Allproduct'
 import Suppliers from './Components/Suppliers';
 import User from './Components/User';
 import Login from './Components/Login';
-import Purchesesreturn from './Components/Purchesesreturn';
-import Salesreturn from './Components/Salesreturn';
+import PurchesesReturn from './Components/PurchesesReturn';
+import SalesReturn from './Components/SalesReturn';
 import {Route , Routes} from 'react-router-dom';
-import Purchasesreturn from './Components/Purchesesreturn';
 import AllSale from './Components/AllSale';
 import Signup from './Components/Signup';
 import UpdateProduct from './Components/UpdateProduct';
@@ -33,13 +32,10 @@ function App() {
           <Route path='/createpurchase' element={<CreatePurchase/>}/>
           <Route path='/createsale' element={<CreateSale/>}/>
           <Route path='/customer' element={<Customer/>}/>
-          <Route path='/purchasereturn' element={<Purchesesreturn/>}/>
-          <Route path='/salesreturn' element={<Salesreturn/>}/>
+          <Route path='/purchasereturn' element={<PurchesesReturn/>}/>
           <Route path='/suppliers' element={<Suppliers/>}/>
           <Route path='/user' element={<User/>}/>
-         
-          <Route path='/purchasereturn' element={<Purchasesreturn/>}/>
-          <Route path='/salereturn' element={<Salesreturn/>}/>
+          <Route path='/salereturn' element={<SalesReturn/>}/>
           <Route path='/allsale' element={<AllSale/>}/>
           <Route path='/signup' element={<Signup/>}/>
           <Route path='/suppliers' element={<Suppliers/>}/>

@@ -16,7 +16,7 @@ import { FiEdit } from "react-icons/fi";
 import { TiDeleteOutline } from "react-icons/ti";
 import SaleReturnStock from './SaleReturnStock';
 
-function Salesreturn() {
+function SalesReturn() {
     const data = (val) => {
         return (
             <tr >
@@ -168,4 +168,4 @@ function Salesreturn() {
         </>
     );
 }
-export default Salesreturn;
+export default SalesReturn;

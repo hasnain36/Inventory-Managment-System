@@ -34,7 +34,7 @@ const data1=(value1)=>{
             <td>{value1.paymentstatus}</td>
             <td>{value1.due}</td>
             <td>
-          <FiEdit onClick={handleShow} />
+          <FiEdit />
           <TiDeleteOutline />
         </td>
         </tr>
