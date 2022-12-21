@@ -15,6 +15,7 @@ import { FiEdit } from "react-icons/fi";
 import { TiDeleteOutline } from "react-icons/ti";
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import PurchaseReturnStock from './PurchaseReturnStock';
+import Pagination from "react-bootstrap/Pagination";
 function PurchasesReturn() {
     const data = (val) => {
         return(
@@ -83,6 +84,16 @@ function PurchasesReturn() {
                     {PurchaseReturnStock.map(data)}
                     </tbody>
                 </Table>
+                <Pagination>
+              <Pagination.First />
+              <Pagination.Prev />
+              <Pagination.Item active>{1}</Pagination.Item>
+              <Pagination.Item>{2}</Pagination.Item>
+              <Pagination.Ellipsis />
+              <Pagination.Item>{5}</Pagination.Item>
+              <Pagination.Next />
+              <Pagination.Last />
+            </Pagination>
             </Row>
         </Container>
         </div>

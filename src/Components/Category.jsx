@@ -9,23 +9,27 @@ import Table from 'react-bootstrap/Table';
 import Navbar from './Navbar';
 import SideBar from './SideBar';
 import Footer from "./Footer";
-import { Link } from 'react-router-dom';
 import CategoryStock from './CategoryStock';
 import { FiEdit } from "react-icons/fi";
 import { TiDeleteOutline } from "react-icons/ti";
 import Modal from 'react-bootstrap/Modal';
+import Pagination from "react-bootstrap/Pagination";
 
 function Category() {
     const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+    const [cshow, setCshow] = useState(false);
+
+  const handleCclose = () => setCshow(false);
+  const handleCshow = () => setCshow(true);
     const data = (val) => {
         return (
             <tr>
                 <td >{val.categoryname}</td>
                 <td>{val.categorycode}</td>
-                <td><FiEdit onClick={handleShow}/><TiDeleteOutline/></td>
+                <td style={{cursor:"pointer"}}><FiEdit onClick={handleShow}/><TiDeleteOutline/></td>
             </tr>
         )
     }
@@ -50,9 +54,9 @@ function Category() {
                             <Form.Control type="Text" placeholder='Search this table'></Form.Control>
                         </Col>
                         <Col lg={9} style={{ textAlign: 'end' }}>
-                            <Link to='/createproduct' style={{ textDecoration: "none" }}>
-                                <Button variant="info" className="mt-4">Create</Button>
-                            </Link>
+                            
+                                <Button variant="info" className="mt-4" onClick={handleCshow}>Create</Button>
+                            
                         </Col>
                     </Row>
                     <Row>
@@ -68,6 +72,16 @@ function Category() {
                                 {CategoryStock.map(data)}
                             </tbody>
                         </Table>
+                        <Pagination>
+              <Pagination.First />
+              <Pagination.Prev />
+              <Pagination.Item active>{1}</Pagination.Item>
+              <Pagination.Item>{2}</Pagination.Item>
+              <Pagination.Ellipsis />
+              <Pagination.Item>{5}</Pagination.Item>
+              <Pagination.Next />
+              <Pagination.Last />
+            </Pagination>
                     </Row>
                 </Container>
             </div>
@@ -76,6 +90,33 @@ function Category() {
         <Container fluid>
           <Modal.Header closeButton>
               <h5>Edit</h5>
+            <hr />
+          </Modal.Header>
+          <Row className='mt-2 ps-2' >
+              <Form>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                  <Form.Label>Category Code</Form.Label>
+                  <Form.Control type="text" placeholder="Category code" />
+                </Form.Group>
+              </Form>
+            </Row>
+            <Row className='ps-2'>
+              <Form>
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                  <Form.Label>Category Name</Form.Label>
+                  <Form.Control type="email" placeholder="Category Name" />
+                </Form.Group>
+              </Form>
+          </Row>
+          <Button variant="primary" type="submit" className="mt-2 mb-4 ms-2">
+            Submit
+          </Button>
+        </Container>
+      </Modal>
+            <Modal show={cshow} onHide={handleCclose} dialogClassName="modal-90w">
+        <Container fluid>
+          <Modal.Header closeButton>
+              <h5>Create</h5>
             <hr />
           </Modal.Header>
           <Row className='mt-2 ps-2' >

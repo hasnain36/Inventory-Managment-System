@@ -18,6 +18,7 @@ import { FiEdit } from "react-icons/fi";
 import { TiDeleteOutline } from "react-icons/ti";
 import { AiOutlinePlusCircle } from 'react-icons/ai';
 import SuppliersStock from './SuppliersStock';
+import Pagination from "react-bootstrap/Pagination";
 
 export default function Suppliers() {
   const data = (val) => {
@@ -93,6 +94,16 @@ export default function Suppliers() {
                 {SuppliersStock.map(data)}
               </tbody>
             </Table>
+            <Pagination>
+              <Pagination.First />
+              <Pagination.Prev />
+              <Pagination.Item active>{1}</Pagination.Item>
+              <Pagination.Item>{2}</Pagination.Item>
+              <Pagination.Ellipsis />
+              <Pagination.Item>{5}</Pagination.Item>
+              <Pagination.Next />
+              <Pagination.Last />
+            </Pagination>
           </Row>
 
 

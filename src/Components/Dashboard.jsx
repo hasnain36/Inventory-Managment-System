@@ -57,7 +57,7 @@ function Dashboard() {
       </div>
     <div className='ps-4'>
     <Container className='ps-4'>
-    <Row xs={1} md={2} lg={4}>
+    <Row xs={1} sm={2} md={4} lg={4}>
     <Col >
     <Link to='/allsale' style={{textDecoration:"none"}}>
     <Card style={{ width: '14rem' }} className="mt-1 ms-4">
@@ -138,7 +138,7 @@ function Dashboard() {
     </Row>
     </Container>
     <Container className='ps-5'>
-        <Row className='mt-2'sm={1} md={1} lg={4} >
+        <Row className='mt-2'sm={1} md={2} lg={4} >
             <Col className='mt-4' lg={8}>
             <Card  >
                 <h5 className='text-start mt-4 ms-3'>Stock Alert</h5>

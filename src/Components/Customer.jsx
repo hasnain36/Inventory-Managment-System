@@ -16,6 +16,7 @@ import { AiOutlineFilter } from 'react-icons/ai';
 import { BsPower } from 'react-icons/bs';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
 import CustomersStock from './CustomerStock';
+import Pagination from "react-bootstrap/Pagination";
 
 export default function Customer() {
   const data = (val) => {
@@ -87,9 +88,17 @@ export default function Customer() {
               <tbody>
                 {CustomersStock.map(data)}
               </tbody>
-
-
             </Table>
+            <Pagination>
+              <Pagination.First />
+              <Pagination.Prev />
+              <Pagination.Item active>{1}</Pagination.Item>
+              <Pagination.Item>{2}</Pagination.Item>
+              <Pagination.Ellipsis />
+              <Pagination.Item>{5}</Pagination.Item>
+              <Pagination.Next />
+              <Pagination.Last />
+            </Pagination>
           </Row>
         </Container>
       </div>
